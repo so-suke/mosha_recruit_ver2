@@ -16,55 +16,57 @@
         <img src="img/logo.svg" alt="リクルートライフスタイル">
       </h1>
       <nav id="headerNav" class="header__nav">
-        <ul class="header__navList">
-          <li class="header__navItem header__navItem--about">
-            <a href="service/">私たちについて<span class="icon"></span></a>
-            <ul class="childNavList">
-              <li>
-                <a href="service" title="OUR SERVICE">サービス紹介</a>
-              </li>
-              <li>
-                <a href="skill" title="SKILL">3年間で身につく6つのスキル</a>
-              </li>
-              <li>
-                <a href="valueup" title="VALUE UP">入社後の成長イメージ</a>
-              </li>
-              <li>
-                <a href="message" title="MESSAGE">代表メッセージ</a>
-              </li>
-            </ul>
-          </li>
-          <li class="header__navItem header__navItem--culture">
-            <a href="culture/">カルチャー</a>
-          </li>
-          <li class="header__navItem header__navItem--member">
-            <a href="member/">社員紹介</a>
-          </li>
-          <li class="header__navItem header__navItem--special">
-            <a href="specialtalk/">スペシャルトーク</a>
-          </li>
-          <li class="header__navItem header__navItem--graduates">
-            <a href="graduates/">卒業生紹介</a>
-          </li>
-          <li class="header__navItem header__navItem--info">
-            <a href="support/">インフォ<span class="icon"></span></a>
-            <ul class="childNavList">
-              <li>
-                <a href="support" title="RECRUITING INFO">支援制度</a>
-              </li>
-              <li>
-                <a href="faq" title="RECRUFAQ">よくあるご質問</a>
-              </li>
-              <li>
-                <a href="access" title="ACCESS">拠点・アクセス一覧</a>
-              </li>
-            </ul>
-          </li>
-          <li class="header__navItem header__navItem--mypage">
-            <a href="https://career.saiyo-dr.jp/rlsk-career/MyPage/new_mypage.do" target="_blank">マイページ</a>
-          </li>
-        </ul>
-        <a class="header__linkBtn" href="entry/">応募する</a>
+        <div class="header__navBar">
+          <ul class="header__navList">
+            <li class="header__navItem header__navItem--about">
+              <a href="service/">私たちについて<span class="icon"></span></a>
+              <ul class="childNavList">
+                <li>
+                  <a href="service" title="OUR SERVICE">サービス紹介</a>
+                </li>
+                <li>
+                  <a href="skill" title="SKILL">3年間で身につく6つのスキル</a>
+                </li>
+                <li>
+                  <a href="valueup" title="VALUE UP">入社後の成長イメージ</a>
+                </li>
+                <li>
+                  <a href="message" title="MESSAGE">代表メッセージ</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__navItem header__navItem--culture">
+              <a href="culture/">カルチャー</a>
+            </li>
+            <li class="header__navItem header__navItem--member">
+              <a href="member/">社員紹介</a>
+            </li>
+            <li class="header__navItem header__navItem--special">
+              <a href="specialtalk/">スペシャルトーク</a>
+            </li>
+            <li class="header__navItem header__navItem--graduates">
+              <a href="graduates/">卒業生紹介</a>
+            </li>
+            <li class="header__navItem header__navItem--info">
+              <a href="support/">インフォ<span class="icon"></span></a>
+              <ul class="childNavList">
+                <li>
+                  <a href="support" title="RECRUITING INFO">支援制度</a>
+                </li>
+                <li>
+                  <a href="faq" title="RECRUFAQ">よくあるご質問</a>
+                </li>
+                <li>
+                  <a href="access" title="ACCESS">拠点・アクセス一覧</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__navItem header__navItem--mypage">
+              <a href="https://career.saiyo-dr.jp/rlsk-career/MyPage/new_mypage.do" target="_blank">マイページ</a>
+            </li>
+          </ul>
+          <a class="header__linkBtn" href="entry/">応募する</a>
+        </div>
         <!-- こちら↓は、スマートフォンサイズでのアニメーションで使用します。 -->
         <div id="navOverlay" class="navOverlay"></div>
       </nav>
@@ -100,10 +102,10 @@
         </div>
       </div>
       <h1 class="visual__logoTitle">
-        <span class="title title-1">
+        <span class="title title--1">
           <img src="img/logo_title_1.svg" alt="DRAMATIC">
         </span>
-        <span class="title title-2">
+        <span class="title title--2">
           <img src="img/logo_title_2.svg" alt="3 YEARS">
         </span>
       </h1>
@@ -171,12 +173,12 @@
             <img src="img/ttl_top_sarvice.svg" alt="提供サービス">
           </p>
           <ul class="servicesProvided__list">
-            <li><img src="img/logo_hp_beauty.png" alt="HOT PEPPER Beauty"></li>
-            <li><img src="img/logo_hp_gourmet.png" alt="HOT PEPPER グルメ"></li>
-            <li><img src="img/logo_jaran.png" alt="じゃらん"></li>
-            <li><img src="img/logo_ponpare.png" alt="ポンパレモール"></li>
-            <li><img src="img/logo_airregi.png" alt="AirREGI"></li>
-            <li><img src="img/logo_salonboard.png" alt="SALON BOARD"></li>
+            <li><img class="logoImghpBeauty" src="img/logo_hp_beauty.png" alt="HOT PEPPER Beauty"></li>
+            <li><img class="logoImghpGourmet" src="img/logo_hp_gourmet.png" alt="HOT PEPPER グルメ"></li>
+            <li><img class="logoImgJaran" src="img/logo_jaran.png" alt="じゃらん"></li>
+            <li><img class="logoImgPonpare" src="img/logo_ponpare.png" alt="ポンパレモール"></li>
+            <li><img class="logoImgAirregi" src="img/logo_airregi.png" alt="AirREGI"></li>
+            <li><img class="logoImgSalonboard" src="img/logo_salonboard.png" alt="SALON BOARD"></li>
           </ul>
           <p class="servicesProvided__note"><small>※当社が展開するサービスの一部</small></p>
         </section>
@@ -335,7 +337,7 @@
       </section>
 
 
-      <section class="column column--special">
+      <section class="column column--special column--reverse">
         <div class="column__contentSide">
           <div class="column__contentInner">
             <h2 class="column__title">
