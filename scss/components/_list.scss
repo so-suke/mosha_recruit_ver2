@@ -1,0 +1,224 @@
+// header
+// ------------------------------------
+.header {
+  font-size: 1.3rem;
+  &__navList {
+    @include breakMinWidth($breakpointSP) {
+      &,
+      .header__navItem,
+      .header__navItem a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    &,
+    .header__navItem,
+    .header__navItem a {
+      @include breakMinWidth($breakpointSP) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .header__navItem {
+      a {
+        color: inherit;
+        font-weight: bold;
+        font-feature-settings: "palt";
+        @include breakMinWidth($breakpointSP) {
+          position: relative;
+          height: 56px;
+          padding: 0 4px;
+          line-height: 1;
+          &:hover {
+            &::before {
+              opacity: 0.6;
+              transform: none;
+            }
+          }
+        }
+        @include breakMinWidth($breakpointTabletLandscape) {
+          padding: 0 8px;
+        }
+        @include breakMinWidth($breakpointDesktop) {
+          padding: 0 16px;
+          letter-spacing: 0.07em;
+        }
+        &::before {
+          @include breakMinWidth($breakpointSP) {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $colorMenuHoverBg;
+            opacity: 0;
+            transform: scale(0.9, 0.6);
+          }
+        }
+      }
+
+      & > a {
+        @include breakMinWidth($breakpointSP) {
+          height: 104px;
+        }
+      }
+
+      &--about {
+        a:hover {
+          color: $colorMenuHoverAbout;
+        }
+      }
+      &--culture {
+        a:hover {
+          color: $colorMenuHoverCulture;
+        }
+      }
+      &--member {
+        a:hover {
+          color: $colorMenuHoverMember;
+        }
+      }
+      &--special {
+        a:hover {
+          color: $colorMenuHoverSpecial;
+        }
+      }
+      &--graduates {
+        a:hover {
+          color: $colorMenuHoverGraduates;
+        }
+      }
+      &--info {
+        a:hover {
+          color: $colorMenuHoverInfo;
+        }
+      }
+    }
+  }
+  // .header .childNavList
+  .childNavList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    @include breakMinWidth($breakpointSP) {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
+
+// concept
+// ------------------------------------
+.concept {
+  .servicesProvided {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      max-width: 416px;
+      padding: 0 16px;
+      margin: 0 auto;
+      @include breakMinWidth($breakpointSP) {
+        flex-wrap: nowrap;
+        justify-content: center;
+        max-width: 800px;
+        padding: 0;
+      }
+      li {
+        max-width: 33.333333%;
+        margin: 4px 0;
+        @include breakMinWidth($breakpointSP) {
+          display: block;
+          margin: 8px;
+        }
+        img {
+          &.logoImghpBeauty {
+            width: calc(111vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 111px;
+              height: 35px;
+            }
+          }
+          &.logoImghpGourmet {
+            width: calc(106vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 106px;
+              height: 36px;
+            }
+          }
+          &.logoImgJaran {
+            width: calc(117vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 117px;
+              height: 40px;
+            }
+          }
+          &.logoImgPonpare {
+            width: calc(112vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 112px;
+              height: 44px;
+            }
+          }
+          &.logoImgAirregi {
+            width: calc(114vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 114px;
+              height: 24px;
+            }
+          }
+          &.logoImgSalonboard {
+            width: calc(117vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 117px;
+              height: 58px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer
+// ------------------------------------
+.footer {
+  &__link {
+    ul {
+      width: auto;
+      margin: 0;
+      @include breakMinWidth($breakpointSP) {
+        width: 49.5%;
+        margin: 1em 0;
+      }
+      &:first-child {
+        padding-right: 0;
+        @include breakMinWidth($breakpointSP) {
+          padding-right: 5%;
+        }
+      }
+      li {
+        a {
+          display: block;
+          line-height: 2;
+          letter-spacing: 0.5px;
+          white-space: nowrap;
+          font-size: 1.2rem;
+          color: $colorBlack;
+          @include breakMinWidth($breakpointSP) {
+            line-height: 2.4;
+          }
+        }
+      }
+    }
+  }
+}
