@@ -409,7 +409,7 @@
       }
     }
   }
-
+  // ↓詳細度の問題でこのような指定方法をしております。
   & &__title {
     .num {
       @include breakMaxWidth($breakpointSP) {
