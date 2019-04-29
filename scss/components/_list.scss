@@ -3,67 +3,64 @@
 .header {
   font-size: 1.3rem;
   &__navList {
-    @include breakMinWidth($breakpointSP) {
-      &,
-      .header__navItem,
-      .header__navItem a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
     &,
     .header__navItem,
     .header__navItem a {
-      @include breakMinWidth($breakpointSP) {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include breakMaxWidth($breakpointSP) {
+        display: block;
       }
     }
     .header__navItem {
       a {
+        position: relative;
         color: inherit;
         font-weight: bold;
         font-feature-settings: "palt";
-        @include breakMinWidth($breakpointSP) {
-          position: relative;
-          height: 56px;
-          padding: 0 4px;
-          line-height: 1;
-          &:hover {
-            &::before {
-              opacity: 0.6;
-              transform: none;
-            }
-          }
-        }
-        @include breakMinWidth($breakpointTabletLandscape) {
+        height: 56px;
+        padding: 0 16px;
+        letter-spacing: 0.07em;
+        line-height: 1;
+        @include breakMaxWidth($breakpointDesktop) {
           padding: 0 8px;
+          letter-spacing: normal;
         }
-        @include breakMinWidth($breakpointDesktop) {
-          padding: 0 16px;
-          letter-spacing: 0.07em;
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          padding: 0 4px;
+        }
+        @include breakMaxWidth($breakpointSP) {
+          line-height: normal;
         }
         &::before {
-          @include breakMinWidth($breakpointSP) {
-            content: "";
-            z-index: -1;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: $colorMenuHoverBg;
-            opacity: 0;
-            transform: scale(0.9, 0.6);
+          content: "";
+          z-index: -1;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: $colorMenuHoverBg;
+          opacity: 0;
+          transform: scale(0.9, 0.6);
+          @include breakMaxWidth($breakpointSP) {
+            content: none;
+          }
+        }
+
+        &:hover {
+          &::before {
+            opacity: 0.6;
+            transform: none;
           }
         }
       }
 
       & > a {
-        @include breakMinWidth($breakpointSP) {
-          height: 104px;
+        height: 104px;
+        @include breakMaxWidth($breakpointSP) {
+          height: 0;
         }
       }
 
@@ -107,10 +104,11 @@
     position: absolute;
     top: 100%;
     left: 0;
+    visibility: hidden;
+    opacity: 0;
     width: 100%;
-    @include breakMinWidth($breakpointSP) {
-      visibility: hidden;
-      opacity: 0;
+    @include breakMaxWidth($breakpointSP) {
+      display: none;
     }
   }
 }
@@ -121,66 +119,73 @@
   .servicesProvided {
     &__list {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-items: center;
-      justify-content: space-around;
-      max-width: 416px;
-      padding: 0 16px;
+      justify-content: center;
+      max-width: 800px;
+      padding: 0;
       margin: 0 auto;
-      @include breakMinWidth($breakpointSP) {
-        flex-wrap: nowrap;
-        justify-content: center;
-        max-width: 800px;
-        padding: 0;
+      @include breakMaxWidth($breakpointSP) {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 416px;
+        padding: 0 16px;
       }
       li {
+        display: block;
         max-width: 33.333333%;
-        margin: 4px 0;
-        @include breakMinWidth($breakpointSP) {
-          display: block;
-          margin: 8px;
+        margin: 8px;
+        @include breakMaxWidth($breakpointSP) {
+          display: list-item;
+          margin: 4px 0;
         }
         img {
           &.logoImghpBeauty {
-            width: calc(111vw / 4.8);
-            @include breakMinWidth($breakpointSP_Portrait) {
-              width: 111px;
-              height: 35px;
+            width: 111px;
+            height: 35px;
+            @include breakMaxWidth($breakpointSP_Portrait) {
+              width: calc(111vw / 4.8);
+              height: auto;
             }
           }
           &.logoImghpGourmet {
-            width: calc(106vw / 4.8);
-            @include breakMinWidth($breakpointSP_Portrait) {
-              width: 106px;
-              height: 36px;
+            width: 106px;
+            height: 36px;
+            @include breakMaxWidth($breakpointSP_Portrait) {
+              width: calc(106vw / 4.8);
+              height: auto;
             }
           }
           &.logoImgJaran {
-            width: calc(117vw / 4.8);
-            @include breakMinWidth($breakpointSP_Portrait) {
-              width: 117px;
-              height: 40px;
+            width: 117px;
+            height: 40px;
+            @include breakMaxWidth($breakpointSP_Portrait) {
+              width: calc(117vw / 4.8);
+              height: auto;
             }
           }
           &.logoImgPonpare {
-            width: calc(112vw / 4.8);
-            @include breakMinWidth($breakpointSP_Portrait) {
-              width: 112px;
-              height: 44px;
+            width: 112px;
+            height: 44px;
+            @include breakMaxWidth($breakpointSP_Portrait) {
+              width: calc(112vw / 4.8);
+              height: auto;
             }
           }
           &.logoImgAirregi {
-            width: calc(114vw / 4.8);
-            @include breakMinWidth($breakpointSP_Portrait) {
-              width: 114px;
-              height: 24px;
+            width: 114px;
+            height: 24px;
+            @include breakMaxWidth($breakpointSP_Portrait) {
+              width: calc(114vw / 4.8);
+              height: auto;
             }
           }
           &.logoImgSalonboard {
-            width: calc(117vw / 4.8);
-            @include breakMinWidth($breakpointSP_Portrait) {
-              width: 117px;
-              height: 58px;
+            width: 117px;
+            height: 58px;
+            @include breakMaxWidth($breakpointSP_Portrait) {
+              width: calc(117vw / 4.8);
+              height: auto;
             }
           }
         }
@@ -194,28 +199,28 @@
 .footer {
   &__link {
     ul {
-      width: auto;
-      margin: 0;
-      @include breakMinWidth($breakpointSP) {
-        width: 49.5%;
-        margin: 1em 0;
+      width: 49.5%;
+      margin: 1em 0;
+      @include breakMaxWidth($breakpointSP) {
+        width: auto;
+        margin: 0;
       }
       &:first-child {
-        padding-right: 0;
-        @include breakMinWidth($breakpointSP) {
-          padding-right: 5%;
+        padding-right: 5%;
+        @include breakMaxWidth($breakpointSP) {
+          padding-right: 0;
         }
       }
       li {
         a {
           display: block;
-          line-height: 2;
+          line-height: 2.4;
           letter-spacing: 0.5px;
           white-space: nowrap;
           font-size: 1.2rem;
           color: $colorBlack;
-          @include breakMinWidth($breakpointSP) {
-            line-height: 2.4;
+          @include breakMaxWidth($breakpointSP) {
+            line-height: 2;
           }
         }
       }

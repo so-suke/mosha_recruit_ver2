@@ -2,38 +2,38 @@
 // ------------------------------------
 .header {
   &__linkBtn {
-    @include breakMinWidth($breakpointSP) {
-      display: flex;
-      align-items: center;
-      position: relative;
-      height: 56px;
-      margin-left: 8px;
-      padding: 0 24px;
-      border-radius: 50px;
-      color: $colorWhite;
-      font-weight: bold;
-    }
-    @include breakMinWidth($breakpointIpad) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 56px;
+    margin-left: 24px;
+    border-radius: 50px;
+    padding: 0 40px;
+    color: $colorWhite;
+    font-weight: bold;
+    @include breakMaxWidth($breakpointDesktop) {
       margin-left: 16px;
       padding: 0 32px;
     }
-    @include breakMinWidth($breakpointDesktop) {
-      margin-left: 24px;
-      padding: 0 40px;
-      justify-content: center;
+    @include breakMaxWidth($breakpointIpad) {
+      margin-left: 8px;
+      padding: 0 24px;
     }
+
     &::before {
-      @include breakMinWidth($breakpointSP) {
-        content: "";
-        z-index: -1;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: $linearGradientBtnPrimary;
-        border-radius: 50px;
-        opacity: 1;
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $linearGradientBtnPrimary;
+      border-radius: 50px;
+      opacity: 1;
+      @include breakMaxWidth($breakpointSP) {
+        content: none;
       }
     }
     &:hover {
@@ -114,17 +114,16 @@
     display: inline-block;
     z-index: 1;
     position: relative;
-    max-width: 200px;
+    max-width: 232px;
     width: 100%;
-    margin-top: 32px;
+    margin-top: 64px;
     padding: 1em 24px;
     border-radius: 2em;
     color: $colorWhite;
     text-align: left;
-    @include breakMinWidth($breakpointSP) {
-      max-width: 232px;
-      margin-top: 64px;
-      font-size: 1.6rem;
+    @include breakMaxWidth($breakpointSP) {
+      max-width: 200px;
+      margin-top: 32px;
     }
     &::before {
       content: "";
@@ -190,35 +189,35 @@
   &__linkbtns {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 0;
     z-index: 1;
-    margin-bottom: 25px;
     width: 100%;
-    @include breakMinWidth($breakpointSP) {
-      position: absolute;
-      bottom: 0;
-      margin-bottom: 0;
-      justify-content: flex-start;
+    margin-bottom: 0;
+    @include breakMaxWidth($breakpointSP) {
+      position: relative;
+      justify-content: center;
+      margin-bottom: 25px;
     }
+
     li {
       a {
         position: relative;
-        height: 48px;
+        height: 59px;
+        width: 160px;
         min-width: 100px;
         border-radius: 50px;
-        font-size: 1.2rem;
+        padding: 0 24px;
+        font-size: 1.5rem;
         line-height: 1;
         text-decoration: inherit;
         color: $colorWhite;
         white-space: nowrap;
-        @include breakMinWidth($breakpointSP_Portrait) {
-          height: 59px;
+        @include breakMaxWidth($breakpointIpad) {
+          height: 48px;
           padding: 0 16px;
-          font-size: 1.5rem;
-        }
-        @include breakMinWidth($breakpointIpad) {
-          width: 160px;
-          padding: 0 24px;
+          font-size: 1.2rem;
         }
         &::after {
           content: "";
@@ -238,14 +237,14 @@
             display: inline-block;
             position: relative;
             top: -0.01em;
-            width: 1em;
-            height: 1em;
+            width: 24px;
+            height: 24px;
             margin-right: 0.5em;
             vertical-align: middle;
             background: url(../img/ico_fb.svg) center / cover no-repeat;
-            @include breakMinWidth($breakpointSP_Portrait) {
-              width: 24px;
-              height: 24px;
+            @include breakMaxWidth($breakpointSP_Portrait) {
+              width: 1em;
+              height: 1em;
             }
           }
         }

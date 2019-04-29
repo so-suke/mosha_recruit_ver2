@@ -8,9 +8,9 @@
   left: 0;
   width: 100%;
   height: 104px;
-  padding: 24px 16px;
-  @include breakMinWidth($breakpointIpad) {
-    padding: 24px 40px;
+  padding: 24px 40px;
+  @include breakMaxWidth($breakpointIpad) {
+    padding: 24px 16px;
   }
   &__logo {
     img {

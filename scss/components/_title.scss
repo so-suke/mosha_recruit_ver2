@@ -3,46 +3,45 @@
 .visual {
   &__logoTitle {
     position: absolute;
-    top: 54%;
-    left: 50%;
-    max-width: 375px;
-    transform: translate(-50%, -50%);
+    top: calc(50% - 100px);
+    left: 0;
+    transform: none;
+    max-width: 100%;
     width: 100%;
     margin: 0;
     padding: 0 16px;
     text-align: center;
+    @include breakMaxWidth($breakpointSP) {
+      top: 54%;
+      left: 50%;
+      max-width: 375px;
+      transform: translate(-50%, -50%);
+    }
     .title {
       display: inline-block;
       position: relative;
       width: 100%;
       img {
-        @include breakMinWidth($breakpointSP) {
-          position: static;
-          width: 100%;
-        }
+        width: 100%;
       }
       &--1 {
         width: 100%;
-        margin-bottom: 2.5vw;
-        @include breakMinWidth($breakpointSP) {
-          max-width: 800px;
-          margin-bottom: 20px;
+        max-width: 800px;
+        margin-bottom: 20px;
+        @include breakMaxWidth($breakpointSP) {
+          max-width: initial;
+          margin-bottom: 2.5vw;
         }
       }
       &--2 {
         width: 78.3%;
+        max-width: 626px;
         margin-left: 4vw;
-        @include breakMinWidth($breakpointSP) {
-          max-width: 626px;
-          margin-bottom: 20px;
+        margin-bottom: 20px;
+        @include breakMaxWidth($breakpointSP) {
+          max-width: initial;
         }
       }
-    }
-    @include breakMinWidth($breakpointSP) {
-      top: calc(50% - 100px);
-      left: 0;
-      max-width: 100%;
-      transform: none;
     }
   }
 }
@@ -54,62 +53,72 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 24px;
+    @include breakMaxWidth($breakpointSP) {
+      margin-bottom: 0;
+    }
     span {
       display: inline-block;
     }
-    @include breakMinWidth($breakpointSP) {
-      margin-bottom: 24px;
-    }
     .bg {
-      width: calc(256vw * 1.5 / 4.8);
-      margin-bottom: calc(-24vw / 4.8);
-      @include breakMinWidth($breakpointSP) {
-        margin-bottom: -40px;
-        width: 513px;
-        height: 82px;
+      width: 513px;
+      height: 82px;
+      margin-bottom: -40px;
+      @include breakMaxWidth($breakpointSP) {
+        width: calc(256vw * 1.5 / 4.8);
+        height: auto;
+        margin-bottom: calc(-24vw / 4.8);
       }
       img {
-        width: 100%;
-        @include breakMinWidth($breakpointSP) {
-          width: auto;
+        @include breakMaxWidth($breakpointSP) {
+          width: 100%;
         }
       }
     }
     .title {
       display: inline-block;
-      margin: calc(8vw / 4) 0;
-      @include breakMinWidth($breakpointSP) {
-        margin: 14px 0;
-      }
-      img {
-        height: 100%;
-      }
-      &--1,
-      &--2 {
-        width: calc(285vw * 1.5 / 4.8);
+      margin: 14px 0;
+      @include breakMaxWidth($breakpointSP) {
+        margin: calc(8vw / 4) 0;
       }
       &--1 {
-        padding-left: calc(16vw / 4.8);
-        @include breakMinWidth($breakpointSP) {
-          padding-left: 24px;
+        padding-left: 24px;
+        @include breakMaxWidth($breakpointSP) {
+          padding-left: calc(16vw / 4.8);
+        }
+        img {
           width: 621px;
-          height: 48px;
         }
       }
       &--2 {
-        padding-right: calc(16vw / 4.8);
-        @include breakMinWidth($breakpointSP) {
-          padding-right: 24px;
+        padding-right: 24px;
+        @include breakMaxWidth($breakpointSP) {
+          padding-right: calc(16vw / 4.8);
+        }
+        img {
           width: 625px;
+        }
+      }
+      &--1,
+      &--2 {
+        @include breakMaxWidth($breakpointSP_Portrait) {
+          width: calc(285vw * 1.5 / 4.8);
+        }
+        img {
           height: 48px;
+          @include breakMaxWidth($breakpointSP_Portrait) {
+            width: 100%;
+            height: auto;
+          }
         }
       }
     }
   }
 
   &__lead {
-    @include breakMinWidth($breakpointSP) {
-      margin-bottom: 56px;
+    margin-bottom: 56px;
+    @include breakMaxWidth($breakpointSP) {
+      margin-bottom: 0;
     }
     img {
       width: 100%;
@@ -117,18 +126,18 @@
     }
     .lead {
       display: inline-block;
-      margin-top: calc(8vw / 4);
-      margin-bottom: calc(8vw / 4);
-      @include breakMinWidth($breakpointSP) {
-        margin: 14px 0;
+      margin: 14px 0;
+      @include breakMaxWidth($breakpointSP) {
+        margin-top: calc(8vw / 4);
+        margin-bottom: calc(8vw / 4);
       }
     }
     &--pc {
-      display: none;
-      @include breakMinWidth($breakpointSP) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include breakMaxWidth($breakpointSP) {
+        display: none;
       }
       .lead {
         &--1 {
@@ -149,59 +158,59 @@
       }
     }
     &--sp {
-      display: block;
-      margin-bottom: calc(40vw / 4.8);
-      @include breakMinWidth($breakpointSP) {
-        display: none;
-        margin-bottom: 56px;
+      display: none;
+      margin-bottom: 56px;
+      @include breakMaxWidth($breakpointSP) {
+        display: block;
+        margin-bottom: calc(40vw / 4.8);
       }
       .lead {
         &--1 {
-          width: calc(170vw * 1.5 / 4.8);
-          @include breakMinWidth($breakpointSP) {
-            width: 255px;
+          width: 255px;
+          @include breakMaxWidth($breakpointSP) {
+            width: calc(170vw * 1.5 / 4.8);
           }
         }
         &--2 {
-          width: calc(157vw * 1.5 / 4.8);
-          @include breakMinWidth($breakpointSP) {
-            width: 236px;
+          width: 236px;
+          @include breakMaxWidth($breakpointSP) {
+            width: calc(157vw * 1.5 / 4.8);
           }
         }
         &--3 {
-          width: calc(178vw * 1.5 / 4.8);
-          @include breakMinWidth($breakpointSP) {
-            width: 267px;
+          width: 267px;
+          @include breakMaxWidth($breakpointSP) {
+            width: calc(178vw * 1.5 / 4.8);
           }
         }
         &--4 {
-          width: calc(165vw * 1.5 / 4.8);
-          @include breakMinWidth($breakpointSP) {
-            width: 248px;
+          width: 248px;
+          @include breakMaxWidth($breakpointSP) {
+            width: calc(165vw * 1.5 / 4.8);
           }
         }
         &--5 {
-          width: calc(294vw * 1.5 / 4.8);
-          @include breakMinWidth($breakpointSP) {
-            width: 441px;
+          width: 441px;
+          @include breakMaxWidth($breakpointSP) {
+            width: calc(294vw * 1.5 / 4.8);
           }
         }
         &--6 {
-          width: calc(215vw * 1.5 / 4.8);
-          @include breakMinWidth($breakpointSP) {
-            width: 323px;
+          width: 323px;
+          @include breakMaxWidth($breakpointSP) {
+            width: calc(215vw * 1.5 / 4.8);
           }
         }
         &--7 {
-          width: calc(233vw * 1.5 / 4.8);
-          @include breakMinWidth($breakpointSP) {
-            width: 350px;
+          width: 350px;
+          @include breakMaxWidth($breakpointSP) {
+            width: calc(233vw * 1.5 / 4.8);
           }
         }
         &--8 {
-          width: calc(200vw * 1.5 / 4.8);
-          @include breakMinWidth($breakpointSP) {
-            width: 300px;
+          width: 300px;
+          @include breakMaxWidth($breakpointSP) {
+            width: calc(200vw * 1.5 / 4.8);
           }
         }
       }
@@ -211,19 +220,19 @@
   .servicesProvided {
     &__title {
       display: inline-block;
-      width: calc(64vw * 1.5 / 4.8);
-      margin-bottom: calc(24vw / 4.8);
-      @include breakMinWidth($breakpointSP_Portrait) {
-        width: calc(64px * 1.5);
+      width: calc(64px * 1.5);
+      margin-bottom: 8px;
+      @include breakMaxWidth($breakpointSP) {
+        width: calc(64vw * 1.5 / 4.8);
         margin-bottom: 24px;
       }
-      @include breakMinWidth($breakpointSP) {
-        margin-bottom: 8px;
+      @include breakMaxWidth($breakpointSP_Portrait) {
+        margin-bottom: calc(24vw / 4.8);
       }
       img {
-        width: 100%;
-        @include breakMinWidth($breakpointSP) {
-          width: auto;
+        width: auto;
+        @include breakMaxWidth($breakpointSP) {
+          width: 100%;
         }
       }
     }
@@ -234,36 +243,36 @@
 // ------------------------------------
 .column {
   &__title {
-    line-height: 1;
-    margin: 0 0 24px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    @include breakMinWidth($breakpointSP) {
-      margin: 0 0 48px;
-      align-items: flex-start;
+    align-items: flex-start;
+    margin: 0 0 48px;
+    line-height: 1;
+    @include breakMaxWidth($breakpointSP) {
+      margin: 0 0 24px;
+      align-items: flex-end;
     }
     .num {
       position: absolute;
-      top: -80px;
       right: 0;
-      opacity: 0.4;
-      @include breakMinWidth($breakpointSP) {
-        opacity: 0.6;
+      opacity: 0.6;
+      @include breakMaxWidth($breakpointSP) {
+        top: -80px;
+        opacity: 0.4;
       }
       img {
-        height: 120px;
-        @include breakMinWidth($breakpointSP) {
-          width: auto;
-          height: 208px;
+        width: auto;
+        height: 208px;
+        @include breakMaxWidth($breakpointSP) {
+          height: 120px;
         }
       }
     }
     .ja {
       display: block;
-      margin-bottom: 8px;
-      @include breakMinWidth($breakpointSP) {
-        margin-bottom: 24px;
+      margin-bottom: 24px;
+      @include breakMaxWidth($breakpointSP) {
+        margin-bottom: 8px;
       }
       img {
         width: 100%;
@@ -271,18 +280,20 @@
     }
     .en {
       display: block;
-      width: calc(92vw / 4.8);
-      @include breakMinWidth($breakpointSP_Portrait) {
-        width: auto;
+      width: auto;
+      @include breakMaxWidth($breakpointSP_Portrait) {
+        width: calc(92vw / 4.8);
       }
       img {
         max-width: 100%;
-        @include breakMinWidth($breakpointSP_Portrait) {
-          height: 100%;
+        height: 100%;
+        @include breakMaxWidth($breakpointSP_Portrait) {
+          height: auto;
         }
       }
     }
   }
+
   // .column modifiers
   &--reverse {
     .column__title {
@@ -295,45 +306,34 @@
   &--culture {
     .column__title {
       .num {
-        @include breakMinWidth($breakpointSP) {
-          top: 0;
-          left: -120px;
+        top: 0;
+        left: -120px;
+        @include breakMaxWidth($breakpointSP) {
+          left: auto;
         }
       }
       .ja {
-        width: calc(158vw * 1.6 / 4.8);
-        @include breakMinWidth($breakpointSP_Portrait) {
+        @include breakMaxWidth($breakpointSP) {
           width: 253px;
         }
-        @include breakMinWidth($breakpointSP) {
-          width: auto;
+        @include breakMaxWidth($breakpointSP_Portrait) {
+          width: calc(158vw * 1.6 / 4.8);
         }
-      }
-    }
-  }
-  &--skill,
-  &--special {
-    .column__title {
-      .num {
-        left: -32px;
       }
     }
   }
   &--skill {
     .column__title {
       .num {
-        @include breakMinWidth($breakpointSP) {
-          top: 0;
-          left: -120px;
-        }
+        top: 0;
+        left: -120px;
       }
       .ja {
-        width: calc(245vw * 1.6 / 4.8);
-        @include breakMinWidth($breakpointSP_Portrait) {
+        @include breakMaxWidth($breakpointSP) {
           width: 392px;
         }
-        @include breakMinWidth($breakpointSP) {
-          width: auto;
+        @include breakMaxWidth($breakpointSP_Portrait) {
+          width: calc(245vw * 1.6 / 4.8);
         }
       }
     }
@@ -341,19 +341,19 @@
   &--member {
     .column__title {
       .num {
+        top: -16px;
+        right: -168px;
         z-index: 1;
-        @include breakMinWidth($breakpointSP) {
-          right: -168px;
-          top: -16px;
+        @include breakMaxWidth($breakpointSP) {
+          right: auto;
         }
       }
       .ja {
-        width: calc(135vw * 1.6 / 4.8);
-        @include breakMinWidth($breakpointSP_Portrait) {
+        @include breakMaxWidth($breakpointSP) {
           width: 216px;
         }
-        @include breakMinWidth($breakpointSP) {
-          width: auto;
+        @include breakMaxWidth($breakpointSP_Portrait) {
+          width: calc(135vw * 1.6 / 4.8);
         }
       }
     }
@@ -361,25 +361,20 @@
   &--special {
     .column__title {
       .num {
-        @include breakMinWidth($breakpointSP) {
-          top: 0px;
-          right: -200px;
-          left: auto;
-        }
+        top: 56px;
+        right: -200px;
       }
       .ja {
-        width: calc(246vw * 1.6 / 4.8);
-        @include breakMinWidth($breakpointSP_Portrait) {
+        @include breakMaxWidth($breakpointSP) {
           width: 394px;
         }
-        @include breakMinWidth($breakpointSP) {
-          width: auto;
+        @include breakMaxWidth($breakpointSP_Portrait) {
+          width: calc(246vw * 1.6 / 4.8);
         }
       }
       .en {
-        width: calc(146vw / 4.8);
-        @include breakMinWidth($breakpointSP_Portrait) {
-          width: auto;
+        @include breakMaxWidth($breakpointSP_Portrait) {
+          width: calc(146vw / 4.8);
         }
       }
     }
@@ -387,19 +382,38 @@
   &--graduates {
     .column__title {
       .num {
-        @include breakMinWidth($breakpointSP) {
-          top: 0;
-          left: -144px;
+        top: 0;
+        left: -144px;
+        @include breakMaxWidth($breakpointSP) {
+          left: auto;
         }
       }
       .ja {
-        width: calc(171vw * 1.6 / 4.8);
-        @include breakMinWidth($breakpointSP_Portrait) {
+        @include breakMaxWidth($breakpointSP) {
           width: 274px;
         }
-        @include breakMinWidth($breakpointSP) {
-          width: auto;
+        @include breakMaxWidth($breakpointSP_Portrait) {
+          width: calc(171vw * 1.6 / 4.8);
         }
+      }
+    }
+  }
+
+  &--skill,
+  &--special {
+    .column__title {
+      .num {
+        @include breakMaxWidth($breakpointSP) {
+          left: -32px;
+        }
+      }
+    }
+  }
+
+  & &__title {
+    .num {
+      @include breakMaxWidth($breakpointSP) {
+        top: -80px;
       }
     }
   }

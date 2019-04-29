@@ -39,34 +39,39 @@
 // visual
 // ------------------------------------
 .visual {
-  height: 100vh;
-  margin-bottom: 88px;
   position: relative;
   overflow: hidden;
+  height: 800px;
+  margin-bottom: 216px;
   background: $linearGradientVisual;
-  @include breakMinWidth($breakpointSP) {
-    height: 800px;
-    margin-bottom: 216px;
+  @include breakMaxWidth($breakpointSP) {
+    height: 100vh;
+    margin-bottom: 88px;
   }
   &__bg {
     position: absolute;
     top: 0;
-    left: 0;
+    left: calc(50% - 650px);
+    width: 1300px;
     height: 100%;
-    width: 110%;
-    background: url(/img/visual_intro_ball_sp.svg) center / cover no-repeat;
-    @include breakMinWidth($breakpointSP) {
-      left: calc(50% - 650px);
-      width: 1300px;
-      background-position: center;
-      background-size: cover;
-      background-repeat: repeat-y;
-      background-image: url(/img/visual_intro_ball_l.svg), url(/img/visual_intro_ball_m.svg),
-        url(/img/visual_intro_ball_s.svg);
+    background-image: url(/img/visual_intro_ball_l.svg), url(/img/visual_intro_ball_m.svg),
+      url(/img/visual_intro_ball_s.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat-y;
+    @include breakMaxWidth($breakpointSP) {
+      left: 0;
+      width: 110%;
+      background: url(/img/visual_intro_ball_sp.svg) center / cover no-repeat;
     }
   }
   // .visual__imgs
   &__imgs {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    margin: 0 auto;
     img {
       width: 100%;
     }
@@ -78,117 +83,112 @@
       &--4,
       &--5,
       &--6 {
-        transform: translateY(-50%);
-        @include breakMinWidth($breakpointTabletLandscape) {
-          transform: translateY(0%);
+        transform: translateY(0%);
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          transform: translateY(-50%);
         }
       }
 
       &--2,
       &--4 {
-        display: none;
-        @include breakMinWidth($breakpointSP) {
-          display: block;
-        }
-        @include breakMinWidth($breakpointTabletLandscape) {
-          display: block;
+        @include breakMaxWidth($breakpointSP) {
+          display: none;
         }
       }
       &--1 {
-        top: 45%;
+        top: calc(49% - 191px);
         right: 84%;
-        width: calc(142vw / 6.67);
-        height: calc(382vw / 9);
-        @include breakMinWidth($breakpointSP) {
+        width: 142px;
+        height: 382px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
           top: 49%;
           width: calc(142vw / 9);
+          height: calc(382vw / 9);
         }
-        @include breakMinWidth($breakpointTabletLandscape) {
-          top: calc(49% - 191px);
-          width: 142px;
-          height: 382px;
+        @include breakMaxWidth($breakpointSP) {
+          top: 45%;
+          width: calc(142vw / 6.67);
         }
       }
       &--2 {
-        top: 42%;
+        top: calc(42% - 182px);
         right: 60%;
-        width: calc(204vw / 9);
-        height: calc(363vw / 9);
-        @include breakMinWidth($breakpointTabletLandscape) {
-          top: calc(42% - 182px);
-          width: 204px;
-          height: 363px;
+        width: 204px;
+        height: 363px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          top: 42%;
+          width: calc(204vw / 9);
+          height: calc(363vw / 9);
         }
       }
       &--3 {
-        top: 46%;
-        left: 76%;
-        width: calc(134vw / 6.67);
-        height: calc(404vw / 9);
-        @include breakMinWidth($breakpointSP) {
+        top: calc(47% - 202px);
+        left: 66%;
+        width: 134px;
+        height: 404px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
           top: 47%;
-          left: 66%;
           width: calc(134vw / 9);
+          height: calc(404vw / 9);
         }
-        @include breakMinWidth($breakpointTabletLandscape) {
-          top: calc(47% - 202px);
-          width: 134px;
-          height: 404px;
+        @include breakMaxWidth($breakpointSP) {
+          top: 46%;
+          left: 76%;
+          width: calc(134vw / 6.67);
         }
       }
       &--4 {
-        top: 50%;
+        top: calc(50% - 197px);
         left: 85%;
-        width: calc(206vw / 9);
-        height: calc(393vw / 9);
-        @include breakMinWidth($breakpointTabletLandscape) {
-          top: calc(50% - 197px);
-          width: 206px;
-          height: 393px;
+        width: 206px;
+        height: 393px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          top: 50%;
+          width: calc(206vw / 9);
+          height: calc(393vw / 9);
         }
       }
       &--5 {
-        top: 46%;
+        top: calc(46% - 179px);
         right: 73%;
-        width: calc(238vw / 7.67);
-        height: calc(358vw / 9);
-        @include breakMinWidth($breakpointSP) {
-          right: 73%;
+        width: 238px;
+        height: 358px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          top: 46%;
           width: calc(238vw / 9);
+          height: calc(358vw / 9);
         }
-        @include breakMinWidth($breakpointTabletLandscape) {
-          top: calc(46% - 179px);
-          width: 238px;
-          height: 358px;
+        @include breakMaxWidth($breakpointSP) {
+          width: calc(238vw / 7.67);
         }
       }
       &--6 {
-        top: 47%;
-        left: 78%;
-        width: calc(266vw / 7.67);
-        height: calc(352vw / 9);
-        @include breakMinWidth($breakpointSP) {
+        top: calc(46% - 176px);
+        left: 70%;
+        width: 266px;
+        height: 352px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
           top: 46%;
-          left: 70%;
           width: calc(266vw / 9);
+          height: calc(352vw / 9);
         }
-        @include breakMinWidth($breakpointTabletLandscape) {
-          top: calc(46% - 176px);
-          width: 266px;
-          height: 352px;
+        @include breakMaxWidth($breakpointSP) {
+          top: 47%;
+          left: 78%;
+          width: calc(266vw / 7.67);
         }
       }
       &--7 {
-        left: 49%;
-        bottom: 0;
-        width: auto;
-        height: 88vh;
+        left: 50%;
+        bottom: -120px;
         transform: translateX(-50%);
-        @include breakMinWidth($breakpointSP) {
-          left: 50%;
-          bottom: -120px;
-          width: 500px;
-          height: 890px;
+        width: 500px;
+        height: 890px;
+        @include breakMaxWidth($breakpointSP) {
+          left: 49%;
+          bottom: 0;
+          width: auto;
+          height: 88vh;
         }
         img {
           width: auto;
@@ -201,30 +201,31 @@
   // .visual__scroll
   &__scroll {
     position: absolute;
-    left: 0;
+    left: 24px;
     bottom: 24px;
-    width: 100vw;
+    transform-origin: 0% 100%;
+    transform: rotate(90deg) translateX(-100%);
+    width: 154px;
     color: $colorWhite;
     font-size: 1.2rem;
+    letter-spacing: 0.1em;
     font-family: "Roboto", sans-serif;
-    text-align: center;
-    @include breakMinWidth($breakpointSP) {
-      left: 24px;
-      transform-origin: 0% 100%;
-      transform: rotate(90deg) translateX(-100%);
-      width: 154px;
-      letter-spacing: 0.1em;
-      text-align: initial;
+    @include breakMaxWidth($breakpointSP) {
+      left: 0;
+      width: 100vw;
+      text-align: center;
+      letter-spacing: normal;
     }
     &::after {
-      @include breakMinWidth($breakpointSP) {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 154px;
-        height: 6px;
-        background: url(/img/arr_scroll.svg) center / cover no-repeat;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 154px;
+      height: 6px;
+      background: url(/img/arr_scroll.svg) center / cover no-repeat;
+      @include breakMaxWidth($breakpointSP) {
+        content: none;
       }
     }
   }
@@ -246,36 +247,40 @@
 // column
 // ------------------------------------
 .column {
-  @include breakMinWidth($breakpointSP) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include breakMaxWidth($breakpointSP) {
+    display: block;
   }
 
   &:not(:last-child) {
-    margin-bottom: 152px;
-    @include breakMinWidth($breakpointSP) {
-      margin-bottom: 224px;
+    margin-bottom: 224px;
+    @include breakMaxWidth($breakpointSP) {
+      margin-bottom: 152px;
     }
   }
   // column__contentSide
   &__contentSide {
-    @include breakMinWidth($breakpointSP) {
-      flex: 1 1 50%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding-right: 80px;
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 80px;
+    @include breakMaxWidth($breakpointSP) {
+      display: block;
+      padding-right: 0;
     }
     .column__contentInner {
       position: relative;
-      @include breakMinWidth($breakpointSP) {
-        max-width: 368px;
+      max-width: 368px;
+      @include breakMaxWidth($breakpointSP) {
+        max-width: initial;
       }
       .pc {
-        display: none;
-        @include breakMinWidth($breakpointSP) {
-          display: block;
+        display: block;
+        @include breakMaxWidth($breakpointSP) {
+          display: none;
         }
       }
     }
@@ -283,15 +288,17 @@
   // .column__imgSide
   &__imgSide {
     position: relative;
-    @include breakMinWidth($breakpointSP) {
-      flex: 1 1 50%;
-      display: flex;
-      justify-content: flex-start;
+    display: flex;
+    flex: 1 1 50%;
+    justify-content: flex-start;
+    @include breakMaxWidth($breakpointSP) {
+      display: block;
     }
     .sp {
-      margin: 14px 0;
-      @include breakMinWidth($breakpointSP) {
-        display: none;
+      display: none;
+      @include breakMaxWidth($breakpointSP) {
+        display: block;
+        margin: 14px 0;
       }
     }
     .column__imgs {
@@ -308,11 +315,11 @@
         }
       }
       &--single {
-        display: inline-block;
         position: relative;
-        padding-bottom: 32px;
-        @include breakMinWidth($breakpointSP) {
-          padding-bottom: 80px;
+        display: inline-block;
+        padding-bottom: 80px;
+        @include breakMaxWidth($breakpointSP) {
+          padding-bottom: 32px;
         }
         &::before {
           width: 100%;
@@ -325,28 +332,31 @@
         flex-wrap: wrap;
         justify-content: space-between;
         position: relative;
-        padding: 24px 0 24px;
-        @include breakMinWidth($breakpointSP_Portrait) {
-          padding-top: 0;
+        max-width: 664px;
+        padding-bottom: 24px;
+        @include breakMaxWidth($breakpointSP) {
+          max-width: initial;
         }
-        @include breakMinWidth($breakpointSP) {
-          max-width: 664px;
+        @include breakMaxWidth($breakpointSP_Portrait) {
+          padding-top: 24px;
         }
         figure {
           position: relative;
-          max-width: calc(50% - 12px);
+          max-width: calc(50% - 16px);
           margin-top: 24px;
-          @include breakMinWidth($breakpointSP_Portrait) {
+          @include breakMaxWidth($breakpointSP) {
             max-width: calc(50% - 24px);
             margin-top: 48px;
           }
-          @include breakMinWidth($breakpointSP) {
-            max-width: calc(50% - 16px);
+          @include breakMaxWidth($breakpointSP_Portrait) {
+            max-width: calc(50% - 12px);
             margin-top: 24px;
           }
+
           &:nth-child(even) {
-            @include breakMinWidth($breakpointSP) {
-              top: -48px;
+            top: -48px;
+            @include breakMaxWidth($breakpointSP) {
+              top: auto;
             }
           }
         }
@@ -357,15 +367,19 @@
   // column--reverse
   &--reverse {
     .column__contentSide {
-      @include breakMinWidth($breakpointSP) {
-        order: 2;
-        justify-content: flex-start;
-        padding-left: 80px;
+      order: 2;
+      justify-content: flex-start;
+      padding-left: 80px;
+      @include breakMaxWidth($breakpointSP) {
+        order: 0;
+        justify-content: initial;
+        padding-left: 0;
       }
     }
     .column__imgSide {
-      @include breakMinWidth($breakpointSP) {
-        justify-content: flex-end;
+      justify-content: flex-end;
+      @include breakMaxWidth($breakpointSP) {
+        justify-content: initial;
       }
     }
   }
@@ -386,79 +400,86 @@
   &--culture,
   &--skill {
     .column__contentInner {
-      @include breakMinWidth($breakpointSP) {
-        padding-top: 312px;
+      padding-top: 312px;
+      @include breakMaxWidth($breakpointSP) {
+        padding-top: 0;
       }
     }
     .column__imgs {
       &::before {
-        top: 0;
-        bottom: 0;
+        top: 168px;
+        bottom: 112px;
         right: 0;
         left: 0;
-        @include breakMinWidth($breakpointSP) {
-          top: 168px;
-          bottom: 112px;
+        @include breakMaxWidth($breakpointSP) {
+          top: 0;
+          bottom: 0;
         }
       }
     }
   }
   &--culture {
-    @include breakMinWidth($breakpointSP) {
-      margin-right: -16px;
+    margin-right: -16px;
+    @include breakMaxWidth($breakpointSP) {
+      margin-right: 0;
     }
     figure {
-      @include breakMinWidth($breakpointSP) {
-        left: -80px;
+      left: -80px;
+      @include breakMaxWidth($breakpointSP) {
+        left: 0;
       }
     }
     .column__imgs {
       &::before {
-        top: 0;
-        right: -16px;
-        left: 64px;
+        top: 168px;
+        right: 0;
+        left: 0;
         bottom: 0;
-        @include breakMinWidth($breakpointSP) {
-          top: 168px;
-          right: 0;
-          left: 0;
+        @include breakMaxWidth($breakpointSP) {
+          top: 0;
+          right: -16px;
+          left: 64px;
         }
       }
     }
     .column__contentSide {
-      @include breakMinWidth($breakpointIpad) {
-        padding-right: 160px;
-      }
-      @include breakMinWidth($breakpointSP) {
+      padding-right: 160px;
+      @include breakMaxWidth($breakpointIpad) {
         padding-right: 120px;
+      }
+      @include breakMaxWidth($breakpointSP) {
+        padding-right: 0;
       }
     }
   }
   &--skill {
-    @include breakMinWidth($breakpointSP) {
-      margin-left: -16px;
+    margin-left: -16px;
+    @include breakMaxWidth($breakpointSP) {
+      margin-left: 0;
     }
     figure {
-      @include breakMinWidth($breakpointSP) {
-        left: 80px;
+      left: 80px;
+      @include breakMaxWidth($breakpointSP) {
+        left: auto;
       }
     }
     .column__contentSide {
-      @include breakMinWidth($breakpointSP) {
+      padding-left: 160px;
+      @include breakMaxWidth($breakpointIpad) {
         padding-left: 120px;
       }
-      @include breakMinWidth($breakpointIpad) {
-        padding-left: 160px;
+      @include breakMaxWidth($breakpointSP) {
+        padding-left: 0;
       }
     }
     .column__imgs {
       &::before {
-        right: 64px;
-        left: -16px;
+        right: 0;
+        left: 0;
         background: $linearGradientColumnBgSkill;
-        @include breakMinWidth($breakpointSP) {
-          right: 0;
-          left: 0;
+        @include breakMaxWidth($breakpointSP) {
+          right: 64px;
+          left: -16px;
         }
       }
     }
@@ -467,35 +488,40 @@
   &--graduates {
     .column__imgs {
       &::before {
-        left: -32px;
-        height: calc(100% - 32px);
-        @include breakMinWidth($breakpointSP) {
-          left: auto;
-          right: -80px;
-          height: calc(100% - 80px);
+        right: -80px;
+        left: auto;
+        height: calc(100% - 80px);
+        @include breakMaxWidth($breakpointSP) {
+          right: 0;
+          left: -32px;
+          height: calc(100% - 32px);
         }
       }
     }
   }
   &--member {
     figure {
-      @include breakMinWidth($breakpointSP) {
-        max-width: 640px;
+      max-width: 640px;
+      @include breakMaxWidth($breakpointSP) {
+        max-width: initial;
       }
     }
     .column__contentSide {
-      @include breakMinWidth($breakpointSP) {
-        flex-basis: calc(50% - 80px);
+      flex-basis: calc(50% - 80px);
+      @include breakMaxWidth($breakpointSP) {
+        flex-basis: initial;
       }
       .column__contentInner {
-        @include breakMinWidth($breakpointSP) {
-          padding-top: 176px;
+        padding-top: 176px;
+        @include breakMaxWidth($breakpointSP) {
+          padding-top: 0;
         }
       }
     }
     .column__imgSide {
-      @include breakMinWidth($breakpointSP) {
-        flex-basis: calc(50% + 80px);
+      flex-basis: calc(50% + 80px);
+      @include breakMaxWidth($breakpointSP) {
+        flex-basis: initial;
       }
     }
     .column__imgs {
@@ -506,69 +532,77 @@
   }
   &--special {
     .column__contentSide {
-      @include breakMinWidth($breakpointSP) {
-        padding-left: 80px;
-      }
-      @include breakMinWidth($breakpointSP_Portrait) {
+      padding-left: 80px;
+      @include breakMaxWidth($breakpointSP) {
         padding-left: 40px;
       }
+      @include breakMaxWidth($breakpointSP_Portrait) {
+        padding-left: 0;
+      }
       .column__contentInner {
-        @include breakMinWidth($breakpointSP) {
-          max-width: 368px;
+        max-width: 368px;
+        @include breakMaxWidth($breakpointSP) {
+          max-width: initial;
         }
       }
     }
     .column__imgs {
-      @include breakMinWidth($breakpointSP_Portrait) {
+      left: 0px;
+      @include breakMaxWidth($breakpointSP) {
         left: -24px;
       }
-      @include breakMinWidth($breakpointSP) {
-        left: 0px;
+      @include breakMaxWidth($breakpointSP_Portrait) {
+        left: auto;
       }
       figure {
-        @include breakMinWidth($breakpointSP) {
-          max-width: 500px;
+        max-width: 500px;
+        @include breakMaxWidth($breakpointSP) {
+          max-width: initial;
         }
       }
       &::before {
         right: -32px;
-        height: calc(100% - 32px);
-        @include breakMinWidth($breakpointSP) {
-          left: -80px;
-          height: calc(100% - 80px);
-        }
+        left: -80px;
+        height: calc(100% - 80px);
         background: $linearGradientColumnBgSpecial;
+        @include breakMaxWidth($breakpointSP) {
+          left: auto;
+          height: calc(100% - 32px);
+        }
       }
     }
   }
   &--graduates {
     .column__contentSide {
-      @include breakMinWidth($breakpointSP) {
-        padding-left: 80px;
-      }
-      @include breakMinWidth($breakpointSP_Portrait) {
+      padding-left: 80px;
+      @include breakMaxWidth($breakpointSP) {
         padding-left: 40px;
       }
+      @include breakMaxWidth($breakpointSP_Portrait) {
+        padding-left: 0;
+      }
       .column__contentInner {
-        @include breakMinWidth($breakpointSP) {
-          padding-top: 152px;
+        padding-top: 152px;
+        @include breakMaxWidth($breakpointSP) {
+          padding-top: 0;
         }
       }
     }
     .column__imgs {
-      right: -16px;
-      @include breakMinWidth($breakpointSP_Portrait) {
+      right: 0px;
+      @include breakMaxWidth($breakpointSP) {
         right: -24px;
       }
-      @include breakMinWidth($breakpointSP) {
-        right: 0px;
+      @include breakMaxWidth($breakpointSP_Portrait) {
+        right: -16px;
       }
       &::before {
         background: $linearGradientColumnBgGraduates;
       }
       figure {
-        @include breakMinWidth($breakpointSP) {
-          max-width: 460px;
+        max-width: 460px;
+        @include breakMaxWidth($breakpointSP) {
+          max-width: initial;
         }
       }
     }
