@@ -1,7 +1,5 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexCenterBetween();
   z-index: 10;
   position: fixed;
   top: 0;
@@ -38,9 +36,7 @@
     }
 
     .header__navBar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flexCenterBetween();
     }
   }
 }

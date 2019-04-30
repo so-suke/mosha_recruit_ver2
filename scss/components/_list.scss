@@ -6,9 +6,7 @@
     &,
     .header__navItem,
     .header__navItem a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flexCenterBetween();
       @include breakMaxWidth($breakpointSP) {
         display: block;
       }
@@ -98,9 +96,7 @@
   }
   // .header .childNavList
   .childNavList {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenterCenter();
     position: absolute;
     top: 100%;
     left: 0;
@@ -118,10 +114,8 @@
 .concept {
   .servicesProvided {
     &__list {
-      display: flex;
+      @include flexCenterCenter();
       flex-wrap: nowrap;
-      align-items: center;
-      justify-content: center;
       max-width: 800px;
       padding: 0;
       margin: 0 auto;

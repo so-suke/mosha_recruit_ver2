@@ -247,9 +247,7 @@
 // column
 // ------------------------------------
 .column {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexCenterBetween();
   @include breakMaxWidth($breakpointSP) {
     display: block;
   }
@@ -263,9 +261,7 @@
   // column__contentSide
   &__contentSide {
     flex: 1 1 50%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    @include flexCenterEnd();
     padding-right: 80px;
     @include breakMaxWidth($breakpointSP) {
       display: block;
@@ -329,8 +325,8 @@
       }
       &--group {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
+        flex-wrap: wrap;
         position: relative;
         max-width: 664px;
         padding-bottom: 24px;

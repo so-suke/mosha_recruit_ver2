@@ -1,3 +1,26 @@
+// 位置調整関連。
+// ------------------------------------
+@mixin flexCenterCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flexCenterBetween() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin flexCenterStart() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+@mixin flexCenterEnd() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 // レスポンシブ関連。
 // ------------------------------------
 @mixin breakMaxWidth($breakPoint) {
