@@ -62,16 +62,7 @@
       }
     }
 
-    &::before,
-    &::after {
-      @include breakMaxWidth($breakpointHeaderNav) {
-        content: "";
-      }
-    }
-
-    &::before,
-    &::after,
-    & .bar {
+    .bar {
       @include breakMaxWidth($breakpointHeaderNav) {
         display: block;
         z-index: 1;
@@ -81,15 +72,16 @@
         height: 2px;
         background: $colorWhite;
       }
-    }
-    &::before {
-      @include breakMaxWidth($breakpointHeaderNav) {
-        transform: translateY(-7px);
+
+      &:nth-child(1) {
+        @include breakMaxWidth($breakpointHeaderNav) {
+          transform: translateY(-7px);
+        }
       }
-    }
-    &::after {
-      @include breakMaxWidth($breakpointHeaderNav) {
-        transform: translateY(7px);
+      &:nth-child(3) {
+        @include breakMaxWidth($breakpointHeaderNav) {
+          transform: translateY(7px);
+        }
       }
     }
 
