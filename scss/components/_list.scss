@@ -31,26 +31,29 @@
         @include breakMaxWidth($breakpointSP) {
           line-height: normal;
         }
+
         &::before {
-          content: "";
-          z-index: -1;
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background: $colorMenuHoverBg;
-          opacity: 0;
-          transform: scale(0.9, 0.6);
-          @include breakMaxWidth($breakpointSP) {
-            content: none;
+          @include breakMinWidth($breakpointHeaderNav) {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $colorMenuHoverBg;
+            opacity: 0;
+            transform: scale(0.9, 0.6);
+            transition: opacity 0.3s, transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
           }
         }
 
         &:hover {
           &::before {
-            opacity: 0.6;
-            transform: none;
+            @include breakMinWidth($breakpointHeaderNav) {
+              opacity: 0.6;
+              transform: none;
+            }
           }
         }
       }

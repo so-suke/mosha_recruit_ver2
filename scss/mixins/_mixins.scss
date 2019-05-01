@@ -34,8 +34,9 @@
     @content;
   }
 }
-@mixin breakMinWidth($breakPoint) {
-  @media (min-width: ($breakPoint)) {
+// PCファーストなスタイルのため、ブレークポイント値をmin-width仕様に修正しています。
+@mixin breakMinWidth($breakPointForMax) {
+  @media (min-width: ($breakPointForMax + 1)) {
     @content;
   }
 }
