@@ -37,7 +37,6 @@
         width: 78.3%;
         max-width: 626px;
         margin-left: 4vw;
-        margin-bottom: 20px;
         @include breakMaxWidth($breakpointSP) {
           max-width: initial;
         }
