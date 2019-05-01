@@ -64,7 +64,7 @@
       width: 513px;
       height: 82px;
       margin-bottom: -40px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointSP_Portrait) {
         width: calc(256vw * 1.5 / 4.8);
         height: auto;
         margin-bottom: calc(-24vw / 4.8);
@@ -78,12 +78,12 @@
     .title {
       display: inline-block;
       margin: 14px 0;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointSP_Portrait) {
         margin: calc(8vw / 4) 0;
       }
       &--1 {
         padding-left: 24px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointSP_Portrait) {
           padding-left: calc(16vw / 4.8);
         }
         img {
@@ -92,7 +92,7 @@
       }
       &--2 {
         padding-right: 24px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointSP_Portrait) {
           padding-right: calc(16vw / 4.8);
         }
         img {
@@ -127,7 +127,7 @@
     .lead {
       display: inline-block;
       margin: 14px 0;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointSP_Portrait) {
         margin-top: calc(8vw / 4);
         margin-bottom: calc(8vw / 4);
       }
@@ -160,56 +160,56 @@
     &--sp {
       display: none;
       margin-bottom: 56px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointSP_Portrait) {
         display: block;
         margin-bottom: calc(40vw / 4.8);
       }
       .lead {
         &--1 {
           width: 255px;
-          @include breakMaxWidth($breakpointSP) {
+          @include breakMaxWidth($breakpointSP_Portrait) {
             width: calc(170vw * 1.5 / 4.8);
           }
         }
         &--2 {
           width: 236px;
-          @include breakMaxWidth($breakpointSP) {
+          @include breakMaxWidth($breakpointSP_Portrait) {
             width: calc(157vw * 1.5 / 4.8);
           }
         }
         &--3 {
           width: 267px;
-          @include breakMaxWidth($breakpointSP) {
+          @include breakMaxWidth($breakpointSP_Portrait) {
             width: calc(178vw * 1.5 / 4.8);
           }
         }
         &--4 {
           width: 248px;
-          @include breakMaxWidth($breakpointSP) {
+          @include breakMaxWidth($breakpointSP_Portrait) {
             width: calc(165vw * 1.5 / 4.8);
           }
         }
         &--5 {
           width: 441px;
-          @include breakMaxWidth($breakpointSP) {
+          @include breakMaxWidth($breakpointSP_Portrait) {
             width: calc(294vw * 1.5 / 4.8);
           }
         }
         &--6 {
           width: 323px;
-          @include breakMaxWidth($breakpointSP) {
+          @include breakMaxWidth($breakpointSP_Portrait) {
             width: calc(215vw * 1.5 / 4.8);
           }
         }
         &--7 {
           width: 350px;
-          @include breakMaxWidth($breakpointSP) {
+          @include breakMaxWidth($breakpointSP_Portrait) {
             width: calc(233vw * 1.5 / 4.8);
           }
         }
         &--8 {
           width: 300px;
-          @include breakMaxWidth($breakpointSP) {
+          @include breakMaxWidth($breakpointSP_Portrait) {
             width: calc(200vw * 1.5 / 4.8);
           }
         }
@@ -223,10 +223,10 @@
       width: calc(64px * 1.5);
       margin-bottom: 8px;
       @include breakMaxWidth($breakpointSP) {
-        width: calc(64vw * 1.5 / 4.8);
         margin-bottom: 24px;
       }
       @include breakMaxWidth($breakpointSP_Portrait) {
+        width: calc(64vw * 1.5 / 4.8);
         margin-bottom: calc(24vw / 4.8);
       }
       img {
