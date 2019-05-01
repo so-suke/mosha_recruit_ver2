@@ -138,7 +138,7 @@
             width: 111px;
             height: 35px;
             @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calc(111vw / 4.8);
+              width: calcSP_PortraitVal(111);
               height: auto;
             }
           }
@@ -146,7 +146,7 @@
             width: 106px;
             height: 36px;
             @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calc(106vw / 4.8);
+              width: calcSP_PortraitVal(106);
               height: auto;
             }
           }
@@ -154,7 +154,7 @@
             width: 117px;
             height: 40px;
             @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calc(117vw / 4.8);
+              width: calcSP_PortraitVal(117);
               height: auto;
             }
           }
@@ -162,7 +162,7 @@
             width: 112px;
             height: 44px;
             @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calc(112vw / 4.8);
+              width: calcSP_PortraitVal(112);
               height: auto;
             }
           }
@@ -170,7 +170,7 @@
             width: 114px;
             height: 24px;
             @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calc(114vw / 4.8);
+              width: calcSP_PortraitVal(114);
               height: auto;
             }
           }
@@ -178,7 +178,7 @@
             width: 117px;
             height: 58px;
             @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calc(117vw / 4.8);
+              width: calcSP_PortraitVal(117);
               height: auto;
             }
           }

@@ -7,6 +7,13 @@ $breakpointHeaderNav: 953px;
 $breakpointSP: 767px;
 $breakpointSP_Portrait: 480px;
 
+// レスポンシブ計算に使用します。
+// ------------------------------------
+$tabletLandscapeAdjustVal: 900 / 100;
+$SP_AdjustVal: 767 / 100;
+$SP_AdjustLargeVal: (767 / 100) - 1; // visual画像の大きさの違いを出すためのもの。
+$SP_PortraitAdjustVal: 480 / 100;
+
 // color
 // ------------------------------------
 $colorWhite: #fff;

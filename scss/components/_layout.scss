@@ -102,12 +102,12 @@
         height: 382px;
         @include breakMaxWidth($breakpointTabletLandscape) {
           top: 49%;
-          width: calc(142vw / 9);
-          height: calc(382vw / 9);
+          width: calcTabletLandscapeVal(142);
+          height: calcTabletLandscapeVal(382);
         }
         @include breakMaxWidth($breakpointSP) {
           top: 45%;
-          width: calc(142vw / 6.67);
+          width: calcSP_LargeVal(142);
         }
       }
       &--2 {
@@ -117,8 +117,8 @@
         height: 363px;
         @include breakMaxWidth($breakpointTabletLandscape) {
           top: 42%;
-          width: calc(204vw / 9);
-          height: calc(363vw / 9);
+          width: calcTabletLandscapeVal(204);
+          height: calcTabletLandscapeVal(363);
         }
       }
       &--3 {
@@ -128,13 +128,13 @@
         height: 404px;
         @include breakMaxWidth($breakpointTabletLandscape) {
           top: 47%;
-          width: calc(134vw / 9);
-          height: calc(404vw / 9);
+          width: calcTabletLandscapeVal(134);
+          height: calcTabletLandscapeVal(404);
         }
         @include breakMaxWidth($breakpointSP) {
           top: 46%;
           left: 76%;
-          width: calc(134vw / 6.67);
+          width: calcSP_LargeVal(134);
         }
       }
       &--4 {
@@ -144,8 +144,8 @@
         height: 393px;
         @include breakMaxWidth($breakpointTabletLandscape) {
           top: 50%;
-          width: calc(206vw / 9);
-          height: calc(393vw / 9);
+          width: calcTabletLandscapeVal(206);
+          height: calcTabletLandscapeVal(393);
         }
       }
       &--5 {
@@ -155,11 +155,11 @@
         height: 358px;
         @include breakMaxWidth($breakpointTabletLandscape) {
           top: 46%;
-          width: calc(238vw / 9);
-          height: calc(358vw / 9);
+          width: calcTabletLandscapeVal(238);
+          height: calcTabletLandscapeVal(358);
         }
         @include breakMaxWidth($breakpointSP) {
-          width: calc(238vw / 7.67);
+          width: calcSP_Val(238);
         }
       }
       &--6 {
@@ -169,13 +169,13 @@
         height: 352px;
         @include breakMaxWidth($breakpointTabletLandscape) {
           top: 46%;
-          width: calc(266vw / 9);
-          height: calc(352vw / 9);
+          width: calcTabletLandscapeVal(266);
+          height: calcTabletLandscapeVal(352);
         }
         @include breakMaxWidth($breakpointSP) {
           top: 47%;
           left: 78%;
-          width: calc(266vw / 7.67);
+          width: calcSP_Val(266);
         }
       }
       &--7 {

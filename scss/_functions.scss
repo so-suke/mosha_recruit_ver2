@@ -1,0 +1,47 @@
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+/// 参照: https://css-tricks.com/snippets/sass/strip-unit-function/
+@function stripUnit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+/// タブレットサイズにおいてのレスポンシブ値を求める。
+/// @param {number} originalPixelNum -
+///   元々の大きさ(pixel値)。
+///   元々の大きさとは、
+///   margin, paddingなどの場合は、一つ上のブレークポイントでの大きさ。
+///   画像の場合は、そのまま元々の大きさ。
+@function calcTabletLandscapeVal($originalPixelNum) {
+  // ※px文字を削除します。
+  $originalPixelNum: stripUnit($originalPixelNum);
+	@return calc(#{$originalPixelNum}vw / #{$tabletLandscapeAdjustVal});
+}
+
+/// スマホサイズにおいてのレスポンシブ値を求める。
+/// @param {number} originalPixelNum - 元々の大きさ(pixel値)。
+@function calcSP_Val($originalPixelNum) {
+  // ※px文字を削除します。
+  $originalPixelNum: stripUnit($originalPixelNum);
+	@return calc(#{$originalPixelNum}vw / #{$SP_AdjustVal});
+}
+
+/// スマホサイズにおいてのレスポンシブ値を求める。visual画像の二番目に大きな画像に使用。
+/// @param {number} originalPixelNum - 元々の大きさ(pixel値)。
+@function calcSP_LargeVal($originalPixelNum) {
+  // ※px文字を削除します。
+  $originalPixelNum: stripUnit($originalPixelNum);
+	@return calc(#{$originalPixelNum}vw / #{$SP_AdjustLargeVal});
+}
+
+/// スマホサイズ(縦)においてのレスポンシブ値を求める。
+/// @param {number} originalPixelNum - 元々の大きさ(pixel値)。
+@function calcSP_PortraitVal($originalPixelNum) {
+  // ※px文字を削除します。
+  $originalPixelNum: stripUnit($originalPixelNum);
+	@return calc(#{$originalPixelNum}vw / #{$SP_PortraitAdjustVal});
+}
