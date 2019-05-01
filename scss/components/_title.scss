@@ -235,13 +235,12 @@
         margin-bottom: 24px;
       }
       @include breakMaxWidth($breakpointSP_Portrait) {
-        width: calcSP_PortraitVal(96);
         margin-bottom: calcSP_PortraitVal(24);
       }
       img {
         width: auto;
         @include breakMaxWidth($breakpointSP) {
-          width: 100%;
+          width: calcSP_PortraitVal(96);
         }
       }
     }
