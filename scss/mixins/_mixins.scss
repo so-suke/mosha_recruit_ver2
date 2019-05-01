@@ -20,6 +20,12 @@
   align-items: center;
   justify-content: flex-end;
 }
+// flex:directionが縦向き、x軸に対して、中央寄せ
+@mixin flexDirectionColumnAlignCenter() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 // レスポンシブ関連。
 // ------------------------------------
