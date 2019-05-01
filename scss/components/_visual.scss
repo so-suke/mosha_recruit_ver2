@@ -1,0 +1,194 @@
+// visual
+// ------------------------------------
+.visual {
+  position: relative;
+  overflow: hidden;
+  height: 800px;
+  margin-bottom: 216px;
+  background: $linearGradientVisual;
+  @include breakMaxWidth($breakpointSP) {
+    height: 100vh;
+    margin-bottom: 88px;
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 650px);
+    width: 1300px;
+    height: 100%;
+    background-image: url(/img/visual_intro_ball_l.svg), url(/img/visual_intro_ball_m.svg),
+      url(/img/visual_intro_ball_s.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat-y;
+    @include breakMaxWidth($breakpointSP) {
+      left: 0;
+      width: 110%;
+      background: url(/img/visual_intro_ball_sp.svg) center / cover no-repeat;
+    }
+  }
+  // .visual__imgs
+  &__imgs {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+    .position {
+      position: absolute;
+      &--1,
+      &--2,
+      &--3,
+      &--4,
+      &--5,
+      &--6 {
+        transform: translateY(0%);
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          transform: translateY(-50%);
+        }
+      }
+
+      &--2,
+      &--4 {
+        @include breakMaxWidth($breakpointSP) {
+          display: none;
+        }
+      }
+      &--1 {
+        top: calc(49% - 191px);
+        right: 84%;
+        width: 142px;
+        height: 382px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          top: 49%;
+          width: calcTabletLandscapeVal(142);
+          height: calcTabletLandscapeVal(382);
+        }
+        @include breakMaxWidth($breakpointSP) {
+          top: 45%;
+          width: calcSP_LargeVal(142);
+        }
+      }
+      &--2 {
+        top: calc(42% - 182px);
+        right: 60%;
+        width: 204px;
+        height: 363px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          top: 42%;
+          width: calcTabletLandscapeVal(204);
+          height: calcTabletLandscapeVal(363);
+        }
+      }
+      &--3 {
+        top: calc(47% - 202px);
+        left: 66%;
+        width: 134px;
+        height: 404px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          top: 47%;
+          width: calcTabletLandscapeVal(134);
+          height: calcTabletLandscapeVal(404);
+        }
+        @include breakMaxWidth($breakpointSP) {
+          top: 46%;
+          left: 76%;
+          width: calcSP_LargeVal(134);
+        }
+      }
+      &--4 {
+        top: calc(50% - 197px);
+        left: 85%;
+        width: 206px;
+        height: 393px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          top: 50%;
+          width: calcTabletLandscapeVal(206);
+          height: calcTabletLandscapeVal(393);
+        }
+      }
+      &--5 {
+        top: calc(46% - 179px);
+        right: 73%;
+        width: 238px;
+        height: 358px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          top: 46%;
+          width: calcTabletLandscapeVal(238);
+          height: calcTabletLandscapeVal(358);
+        }
+        @include breakMaxWidth($breakpointSP) {
+          width: calcSP_Val(238);
+        }
+      }
+      &--6 {
+        top: calc(46% - 176px);
+        left: 70%;
+        width: 266px;
+        height: 352px;
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          top: 46%;
+          width: calcTabletLandscapeVal(266);
+          height: calcTabletLandscapeVal(352);
+        }
+        @include breakMaxWidth($breakpointSP) {
+          top: 47%;
+          left: 78%;
+          width: calcSP_Val(266);
+        }
+      }
+      &--7 {
+        left: 50%;
+        bottom: -120px;
+        transform: translateX(-50%);
+        width: 500px;
+        height: 890px;
+        @include breakMaxWidth($breakpointSP) {
+          left: 49%;
+          bottom: 0;
+          width: auto;
+          height: 88vh;
+        }
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  // .visual__scroll
+  &__scroll {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    transform-origin: 0% 100%;
+    transform: rotate(90deg) translateX(-100%);
+    width: 154px;
+    color: $colorWhite;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    font-family: "Roboto", sans-serif;
+    @include breakMaxWidth($breakpointSP) {
+      left: 0;
+      width: 100vw;
+      text-align: center;
+      letter-spacing: normal;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 154px;
+      height: 6px;
+      background: url(/img/arr_scroll.svg) center / cover no-repeat;
+      @include breakMaxWidth($breakpointSP) {
+        content: none;
+      }
+    }
+  }
+}
