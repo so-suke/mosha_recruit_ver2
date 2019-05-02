@@ -2,6 +2,10 @@
 // ------------------------------------
 @import "./variables/variables";
 
+// functions
+// ------------------------------------
+@import "./functions";
+
 // resets
 // ------------------------------------
 @import "./resets/resets";
@@ -18,6 +22,15 @@
 
 // header
 @import "./components/header";
+
+// visual
+@import "./components/visual";
+
+// column
+@import "./components/column";
+
+// entireBackgroud
+@import "./components/entireBackgroud";
 
 // footer
 @import "./components/footer";
