@@ -25,6 +25,10 @@
       left: 0;
       width: 110%;
       background: url(/img/visual_intro_ball_sp.svg) center / cover no-repeat;
+      background-position: center 0px, center 0px, center 0px;
+      @include breakMaxWidthAndLandscape($breakpointSP) {
+        background-position: center bottom;
+      }
     }
   }
   // .visual__imgs
@@ -49,11 +53,14 @@
         @include breakMaxWidth($breakpointTabletLandscape) {
           transform: translateY(-50%);
         }
+        @include breakMaxWidthAndLandscape($breakpointSP) {
+          transform: translate(-15%, -25%);
+        }
       }
 
       &--2,
       &--4 {
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidthAndPortrait($breakpointSP) {
           display: none;
         }
       }
@@ -71,6 +78,9 @@
           top: 45%;
           width: calcSP_LargeVal(142);
         }
+        @include breakMaxWidthAndLandscape($breakpointSP) {
+          max-width: 71px;
+        }
       }
       &--2 {
         top: 20%;
@@ -81,6 +91,9 @@
           top: 42%;
           width: calcTabletLandscapeVal(204);
           height: calcTabletLandscapeVal(363);
+        }
+        @include breakMaxWidthAndLandscape($breakpointSP) {
+          max-width: 102px;
         }
       }
       &--3 {
@@ -95,8 +108,13 @@
         }
         @include breakMaxWidth($breakpointSP) {
           top: 46%;
-          left: 76%;
           width: calcSP_LargeVal(134);
+        }
+        @include breakMaxWidthAndPortrait($breakpointSP) {
+          left: 76%;
+        }
+        @include breakMaxWidthAndLandscape($breakpointSP) {
+          max-width: 67px;
         }
       }
       &--4 {
@@ -108,6 +126,9 @@
           top: 50%;
           width: calcTabletLandscapeVal(206);
           height: calcTabletLandscapeVal(393);
+        }
+        @include breakMaxWidthAndLandscape($breakpointSP) {
+          max-width: 103px;
         }
       }
       &--5 {
@@ -123,6 +144,9 @@
         @include breakMaxWidth($breakpointSP) {
           width: calcSP_Val(238);
         }
+        @include breakMaxWidthAndLandscape($breakpointSP) {
+          max-width: 119px;
+        }
       }
       &--6 {
         top: 24%;
@@ -136,8 +160,13 @@
         }
         @include breakMaxWidth($breakpointSP) {
           top: 47%;
-          left: 78%;
           width: calcSP_Val(266);
+        }
+        @include breakMaxWidthAndPortrait($breakpointSP) {
+          left: 78%;
+        }
+        @include breakMaxWidthAndLandscape($breakpointSP) {
+          max-width: 133px;
         }
       }
       &--7 {
@@ -151,6 +180,10 @@
           bottom: 0;
           width: auto;
           height: 88vh;
+          min-height: 100vw;
+        }
+        @include breakMaxWidthAndLandscape($breakpointSP) {
+          top: 0;
         }
         img {
           width: auto;

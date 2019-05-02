@@ -34,6 +34,18 @@
     @content;
   }
 }
+// max-width, 画面縦向き
+@mixin breakMaxWidthAndPortrait($breakPoint) {
+  @media screen and (max-width: $breakPoint) and (orientation:portrait) {
+    @content;
+  }
+}
+// max-width, 画面横向き
+@mixin breakMaxWidthAndLandscape($breakPoint) {
+  @media screen and (max-width: $breakPoint) and (orientation:landscape) {
+    @content;
+  }
+}
 // PCファーストなスタイルのため、ブレークポイント値をmin-width仕様に修正しています。
 @mixin breakMinWidth($breakPointForMax) {
   @media (min-width: ($breakPointForMax + 1)) {
