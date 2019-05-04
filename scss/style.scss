@@ -2,9 +2,10 @@
 // ------------------------------------
 @import "./variables/variables";
 
-// functions
+// utils
 // ------------------------------------
-@import "./functions";
+@import "./utils/basic";
+@import "./utils/calcResponsive";
 
 // resets
 // ------------------------------------
@@ -16,32 +17,14 @@
 
 // components
 // ------------------------------------
-
-// layout
 @import "./components/layout";
-
-// header
 @import "./components/header";
-
-// visual
 @import "./components/visual";
-
-// column
 @import "./components/column";
-
-// entireBackgroud
 @import "./components/entireBackgroud";
-
-// footer
 @import "./components/footer";
-
-// list
 @import "./components/list";
-
-// btn
 @import "./components/btn";
-
-// title
 @import "./components/title";
 
 // animation
