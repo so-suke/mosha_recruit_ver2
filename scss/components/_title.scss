@@ -2,7 +2,7 @@
 // ------------------------------------
 .visual {
   &__logoTitle {
-    @include flexDirectionColumnAlignCenter();
+    @include flexColumnCentering();
     position: absolute;
     top: calc(50% - 100px);
     left: 0;
@@ -49,9 +49,7 @@
 // ------------------------------------
 .concept {
   &__title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexColumnCentering();
     margin-bottom: 24px;
     @include breakMaxWidth($breakpointSP) {
       margin-bottom: 0;
@@ -138,9 +136,7 @@
       }
     }
     &--pc {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flexColumnCentering();
       @include breakMaxWidth($breakpointSP) {
         display: none;
       }
@@ -250,9 +246,7 @@
 // ------------------------------------
 .column {
   &__title {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    @include flexColumnStart();
     margin: 0 0 48px;
     line-height: 1;
     @include breakMaxWidth($breakpointSP) {

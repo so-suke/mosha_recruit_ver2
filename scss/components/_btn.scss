@@ -2,7 +2,7 @@
 // ------------------------------------
 .header {
   &__linkBtn {
-    @include flexCenterCenter();
+    @include flex(center);
     position: relative;
     height: 56px;
     margin-left: 24px;
@@ -172,10 +172,10 @@
 // ------------------------------------
 .footer {
   &__linkbtns li a {
-    @include flexCenterCenter();
+    @include flex(center);
   }
   &__linkbtns {
-    @include flexCenterStart();
+    @include flex(flex-start center);
     position: absolute;
     bottom: 0;
     z-index: 1;
