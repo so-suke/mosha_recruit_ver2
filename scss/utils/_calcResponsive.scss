@@ -1,16 +1,3 @@
-/// Remove the unit of a length
-/// 主に'px'を取り除くことに使用します。
-/// @param {Number} $number - Number to remove unit from
-/// @return {Number} - Unitless number
-/// 参照: https://css-tricks.com/snippets/sass/strip-unit-function/
-@function stripUnit($number) {
-  @if type-of($number) == "number" and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
-
-  @return $number;
-}
-
 /// タブレットサイズにおいてのレスポンシブ値を求める。
 /// @param {number} originalPixelNum -
 ///   元々の大きさ(pixel値)。
