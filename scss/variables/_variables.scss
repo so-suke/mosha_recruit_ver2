@@ -4,15 +4,15 @@ $breakpointDesktop: 1199px;
 $breakpointIpad: 1023px;
 $breakpointTabletLandscape: 900px;
 $breakpointHeaderNav: 953px;
-$breakpointSP: 767px;
-$breakpointSP_Portrait: 480px;
+$breakpointPhone: 767px;
+$breakpointPhonePortrait: 480px;
 
 // レスポンシブ計算に使用します。
 // ------------------------------------
 $tabletLandscapeAdjustVal: 900 / 100;
-$SP_AdjustVal: 767 / 100;
-$SP_AdjustLargeVal: (767 / 100) - 1; // visual画像の大きさの違いを出すためのもの。
-$SP_PortraitAdjustVal: 480 / 100;
+$phoneAdjustVal: 767 / 100;
+$phoneAdjustLargeVal: (767 / 100) - 1; // visual画像の大きさの違いを出すためのもの。
+$phonePortraitAdjustVal: 480 / 100;
 
 // color
 // ------------------------------------

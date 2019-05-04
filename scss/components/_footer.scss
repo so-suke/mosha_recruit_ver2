@@ -8,7 +8,7 @@
   @include breakMaxWidth($breakpointIpad) {
     padding: 24px 16px 52px;
   }
-  @include breakMaxWidth($breakpointSP) {
+  @include breakMaxWidth($breakpointPhone) {
     display: block;
     margin-top: 68px;
     padding: 34px 16px 20px;
@@ -18,7 +18,7 @@
   &__link {
     display: flex;
     flex-grow: 2;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       display: block;
     }
   }
@@ -30,7 +30,7 @@
     margin-top: 20px;
     border-left: 1px solid $colorFooterBorder;
     padding: 0 8px 8px;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       justify-content: center;
       margin-top: 35px;
       padding: 0;
@@ -42,10 +42,10 @@
       @include breakMaxWidth($breakpointIpad) {
         width: 240px;
       }
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         margin-bottom: 8px;
       }
-      @include breakMaxWidth($breakpointSP_Portrait) {
+      @include breakMaxWidth($breakpointPhonePortrait) {
         margin-bottom: 4px;
       }
     }
@@ -59,7 +59,7 @@
         display: block;
         width: auto;
       }
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         display: flex;
         flex-direction: column-reverse;
         height: 100%;

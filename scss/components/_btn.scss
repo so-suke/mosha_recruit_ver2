@@ -30,7 +30,7 @@
       background: $linearGradientBtnPrimary;
       border-radius: 50px;
       opacity: 1;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         content: none;
       }
     }
@@ -111,7 +111,7 @@
     border-radius: 2em;
     color: $colorWhite;
     text-align: left;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       max-width: 200px;
       margin-top: 32px;
     }
@@ -181,7 +181,7 @@
     z-index: 1;
     width: 100%;
     margin-bottom: 0;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       position: relative;
       justify-content: center;
       margin-bottom: 25px;
@@ -228,7 +228,7 @@
             margin-right: 0.5em;
             vertical-align: middle;
             background: url(../img/ico_fb.svg) center / cover no-repeat;
-            @include breakMaxWidth($breakpointSP_Portrait) {
+            @include breakMaxWidth($breakpointPhonePortrait) {
               width: 1em;
               height: 1em;
             }

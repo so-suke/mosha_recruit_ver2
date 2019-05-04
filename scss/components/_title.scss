@@ -11,7 +11,7 @@
     width: 100%;
     margin: 0;
     padding: 0 16px;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       top: 54%;
       left: 50%;
       max-width: 375px;
@@ -28,7 +28,7 @@
         width: 100%;
         max-width: 800px;
         margin-bottom: 20px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           max-width: initial;
           margin-bottom: 2.5vw;
         }
@@ -37,7 +37,7 @@
         width: 78.3%;
         max-width: 626px;
         margin-left: 4vw;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           max-width: initial;
         }
       }
@@ -51,7 +51,7 @@
   &__title {
     @include flexColumnCentering();
     margin-bottom: 24px;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       margin-bottom: 0;
     }
     span {
@@ -61,13 +61,13 @@
       width: 513px;
       height: 82px;
       margin-bottom: -40px;
-      @include breakMaxWidth($breakpointSP_Portrait) {
+      @include breakMaxWidth($breakpointPhonePortrait) {
         width: 80vw;
         height: auto;
         margin-bottom: -5vw;
       }
       img {
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           width: 100%;
         }
       }
@@ -75,16 +75,16 @@
     .title {
       display: inline-block;
       margin: 14px 0;
-      @include breakMaxWidth($breakpointSP_Portrait) {
+      @include breakMaxWidth($breakpointPhonePortrait) {
         margin: 2vw 0;
       }
       &--1 {
         padding-left: 24px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           padding-left: 16px;
         }
-        @include breakMaxWidth($breakpointSP_Portrait) {
-          padding-left: calcSP_PortraitVal(16);
+        @include breakMaxWidth($breakpointPhonePortrait) {
+          padding-left: calcPhonePortraitVal(16);
         }
         img {
           width: 621px;
@@ -92,11 +92,11 @@
       }
       &--2 {
         padding-right: 24px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           padding-right: 16px;
         }
-        @include breakMaxWidth($breakpointSP_Portrait) {
-          padding-right: calcSP_PortraitVal(16);
+        @include breakMaxWidth($breakpointPhonePortrait) {
+          padding-right: calcPhonePortraitVal(16);
         }
         img {
           width: 625px;
@@ -104,12 +104,12 @@
       }
       &--1,
       &--2 {
-        @include breakMaxWidth($breakpointSP_Portrait) {
+        @include breakMaxWidth($breakpointPhonePortrait) {
           width: 89vw;
         }
         img {
           height: 48px;
-          @include breakMaxWidth($breakpointSP_Portrait) {
+          @include breakMaxWidth($breakpointPhonePortrait) {
             width: 100%;
             height: auto;
           }
@@ -120,7 +120,7 @@
 
   &__lead {
     margin-bottom: 56px;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       margin-bottom: 0;
     }
     img {
@@ -130,14 +130,14 @@
     .lead {
       display: inline-block;
       margin: 14px 0;
-      @include breakMaxWidth($breakpointSP_Portrait) {
+      @include breakMaxWidth($breakpointPhonePortrait) {
         margin-top: 2vw;
         margin-bottom: 2vw;
       }
     }
     &--pc {
       @include flexColumnCentering();
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         display: none;
       }
       .lead {
@@ -161,60 +161,60 @@
     &--sp {
       display: none;
       margin-bottom: 56px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         margin-bottom: 40px;
       }
-      @include breakMaxWidth($breakpointSP_Portrait) {
+      @include breakMaxWidth($breakpointPhonePortrait) {
         display: block;
-        margin-bottom: calcSP_PortraitVal(40);
+        margin-bottom: calcPhonePortraitVal(40);
       }
       .lead {
         &--1 {
           width: 255px;
-          @include breakMaxWidth($breakpointSP_Portrait) {
-            width: calcSP_PortraitVal(255);
+          @include breakMaxWidth($breakpointPhonePortrait) {
+            width: calcPhonePortraitVal(255);
           }
         }
         &--2 {
           width: 236px;
-          @include breakMaxWidth($breakpointSP_Portrait) {
-            width: calcSP_PortraitVal(236);
+          @include breakMaxWidth($breakpointPhonePortrait) {
+            width: calcPhonePortraitVal(236);
           }
         }
         &--3 {
           width: 267px;
-          @include breakMaxWidth($breakpointSP_Portrait) {
-            width: calcSP_PortraitVal(267);
+          @include breakMaxWidth($breakpointPhonePortrait) {
+            width: calcPhonePortraitVal(267);
           }
         }
         &--4 {
           width: 248px;
-          @include breakMaxWidth($breakpointSP_Portrait) {
-            width: calcSP_PortraitVal(248);
+          @include breakMaxWidth($breakpointPhonePortrait) {
+            width: calcPhonePortraitVal(248);
           }
         }
         &--5 {
           width: 441px;
-          @include breakMaxWidth($breakpointSP_Portrait) {
-            width: calcSP_PortraitVal(441);
+          @include breakMaxWidth($breakpointPhonePortrait) {
+            width: calcPhonePortraitVal(441);
           }
         }
         &--6 {
           width: 323px;
-          @include breakMaxWidth($breakpointSP_Portrait) {
-            width: calcSP_PortraitVal(323);
+          @include breakMaxWidth($breakpointPhonePortrait) {
+            width: calcPhonePortraitVal(323);
           }
         }
         &--7 {
           width: 350px;
-          @include breakMaxWidth($breakpointSP_Portrait) {
-            width: calcSP_PortraitVal(350);
+          @include breakMaxWidth($breakpointPhonePortrait) {
+            width: calcPhonePortraitVal(350);
           }
         }
         &--8 {
           width: 300px;
-          @include breakMaxWidth($breakpointSP_Portrait) {
-            width: calcSP_PortraitVal(300);
+          @include breakMaxWidth($breakpointPhonePortrait) {
+            width: calcPhonePortraitVal(300);
           }
         }
       }
@@ -226,16 +226,16 @@
       display: inline-block;
       width: 96px;
       margin-bottom: 8px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         margin-bottom: 24px;
       }
-      @include breakMaxWidth($breakpointSP_Portrait) {
-        margin-bottom: calcSP_PortraitVal(24);
+      @include breakMaxWidth($breakpointPhonePortrait) {
+        margin-bottom: calcPhonePortraitVal(24);
       }
       img {
         width: auto;
-        @include breakMaxWidth($breakpointSP) {
-          width: calcSP_PortraitVal(96);
+        @include breakMaxWidth($breakpointPhone) {
+          width: calcPhonePortraitVal(96);
         }
       }
     }
@@ -249,7 +249,7 @@
     @include flexColumnStart();
     margin: 0 0 48px;
     line-height: 1;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       margin: 0 0 24px;
       align-items: flex-end;
     }
@@ -257,14 +257,14 @@
       position: absolute;
       right: 0;
       opacity: 0.6;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         top: -80px;
         opacity: 0.4;
       }
       img {
         width: auto;
         height: 208px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           height: 120px;
         }
       }
@@ -272,7 +272,7 @@
     .ja {
       display: block;
       margin-bottom: 24px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         margin-bottom: 8px;
       }
       img {
@@ -282,13 +282,13 @@
     .en {
       display: block;
       width: auto;
-      @include breakMaxWidth($breakpointSP_Portrait) {
-        width: calcSP_PortraitVal(92);
+      @include breakMaxWidth($breakpointPhonePortrait) {
+        width: calcPhonePortraitVal(92);
       }
       img {
         max-width: 100%;
         height: 100%;
-        @include breakMaxWidth($breakpointSP_Portrait) {
+        @include breakMaxWidth($breakpointPhonePortrait) {
           height: auto;
         }
       }
@@ -309,16 +309,16 @@
       .num {
         top: 0;
         left: -120px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           left: auto;
         }
       }
       .ja {
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           width: 253px;
         }
-        @include breakMaxWidth($breakpointSP_Portrait) {
-          width: calcSP_PortraitVal(253);
+        @include breakMaxWidth($breakpointPhonePortrait) {
+          width: calcPhonePortraitVal(253);
         }
       }
     }
@@ -330,11 +330,11 @@
         left: -120px;
       }
       .ja {
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           width: 392px;
         }
-        @include breakMaxWidth($breakpointSP_Portrait) {
-          width: calcSP_PortraitVal(392);
+        @include breakMaxWidth($breakpointPhonePortrait) {
+          width: calcPhonePortraitVal(392);
         }
       }
     }
@@ -345,16 +345,16 @@
         top: -16px;
         right: -168px;
         z-index: 1;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           right: auto;
         }
       }
       .ja {
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           width: 216px;
         }
-        @include breakMaxWidth($breakpointSP_Portrait) {
-          width: calcSP_PortraitVal(216);
+        @include breakMaxWidth($breakpointPhonePortrait) {
+          width: calcPhonePortraitVal(216);
         }
       }
     }
@@ -366,16 +366,16 @@
         right: -200px;
       }
       .ja {
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           width: 394px;
         }
-        @include breakMaxWidth($breakpointSP_Portrait) {
-          width: calcSP_PortraitVal(394);
+        @include breakMaxWidth($breakpointPhonePortrait) {
+          width: calcPhonePortraitVal(394);
         }
       }
       .en {
-        @include breakMaxWidth($breakpointSP_Portrait) {
-          width: calcSP_PortraitVal(146);
+        @include breakMaxWidth($breakpointPhonePortrait) {
+          width: calcPhonePortraitVal(146);
         }
       }
     }
@@ -385,16 +385,16 @@
       .num {
         top: 0;
         left: -144px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           left: auto;
         }
       }
       .ja {
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           width: 274px;
         }
-        @include breakMaxWidth($breakpointSP_Portrait) {
-          width: calcSP_PortraitVal(274);
+        @include breakMaxWidth($breakpointPhonePortrait) {
+          width: calcPhonePortraitVal(274);
         }
       }
     }
@@ -404,7 +404,7 @@
   &--special {
     .column__title {
       .num {
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           left: -32px;
         }
       }
@@ -413,7 +413,7 @@
   // ↓詳細度の問題でこのような指定方法をしております。
   & &__title {
     .num {
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         top: -80px;
       }
     }

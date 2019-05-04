@@ -2,13 +2,13 @@
 // ------------------------------------
 .column {
   @include flex(space-between center);
-  @include breakMaxWidth($breakpointSP) {
+  @include breakMaxWidth($breakpointPhone) {
     display: block;
   }
 
   &:not(:last-child) {
     margin-bottom: 224px;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       margin-bottom: 152px;
     }
   }
@@ -17,19 +17,19 @@
     flex: 1 1 50%;
     @include flex(flex-end center);
     padding-right: 80px;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       display: block;
       padding-right: 0;
     }
     .column__contentInner {
       position: relative;
       max-width: 368px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         max-width: initial;
       }
       .pc {
         display: block;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           display: none;
         }
       }
@@ -41,12 +41,12 @@
     display: flex;
     flex: 1 1 50%;
     justify-content: flex-start;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       display: block;
     }
     .sp {
       display: none;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         display: block;
         margin: 14px 0;
       }
@@ -68,7 +68,7 @@
         position: relative;
         display: inline-block;
         padding-bottom: 80px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           padding-bottom: 32px;
         }
         &::before {
@@ -84,28 +84,28 @@
         position: relative;
         max-width: 664px;
         padding-bottom: 24px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           max-width: initial;
         }
-        @include breakMaxWidth($breakpointSP_Portrait) {
+        @include breakMaxWidth($breakpointPhonePortrait) {
           padding-top: 24px;
         }
         figure {
           position: relative;
           max-width: calc(50% - 16px);
           margin-top: 24px;
-          @include breakMaxWidth($breakpointSP) {
+          @include breakMaxWidth($breakpointPhone) {
             max-width: calc(50% - 24px);
             margin-top: 48px;
           }
-          @include breakMaxWidth($breakpointSP_Portrait) {
+          @include breakMaxWidth($breakpointPhonePortrait) {
             max-width: calc(50% - 12px);
             margin-top: 24px;
           }
 
           &:nth-child(even) {
             top: -48px;
-            @include breakMaxWidth($breakpointSP) {
+            @include breakMaxWidth($breakpointPhone) {
               top: auto;
             }
           }
@@ -120,7 +120,7 @@
       order: 2;
       justify-content: flex-start;
       padding-left: 80px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         order: 0;
         justify-content: initial;
         padding-left: 0;
@@ -128,7 +128,7 @@
     }
     .column__imgSide {
       justify-content: flex-end;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         justify-content: initial;
       }
     }
@@ -151,7 +151,7 @@
   &--skill {
     .column__contentInner {
       padding-top: 312px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         padding-top: 0;
       }
     }
@@ -161,7 +161,7 @@
         bottom: 112px;
         right: 0;
         left: 0;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           top: 0;
           bottom: 0;
         }
@@ -170,12 +170,12 @@
   }
   &--culture {
     margin-right: -16px;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       margin-right: 0;
     }
     figure {
       left: -80px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         left: 0;
       }
     }
@@ -185,7 +185,7 @@
         right: 0;
         left: 0;
         bottom: 0;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           top: 0;
           right: -16px;
           left: 64px;
@@ -197,19 +197,19 @@
       @include breakMaxWidth($breakpointIpad) {
         padding-right: 120px;
       }
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         padding-right: 0;
       }
     }
   }
   &--skill {
     margin-left: -16px;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       margin-left: 0;
     }
     figure {
       left: 80px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         left: auto;
       }
     }
@@ -218,7 +218,7 @@
       @include breakMaxWidth($breakpointIpad) {
         padding-left: 120px;
       }
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         padding-left: 0;
       }
     }
@@ -227,7 +227,7 @@
         right: 0;
         left: 0;
         background: $linearGradientColumnBgSkill;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           right: 64px;
           left: -16px;
         }
@@ -241,7 +241,7 @@
         right: -80px;
         left: auto;
         height: calc(100% - 80px);
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           right: 0;
           left: -32px;
           height: calc(100% - 32px);
@@ -252,25 +252,25 @@
   &--member {
     figure {
       max-width: 640px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         max-width: initial;
       }
     }
     .column__contentSide {
       flex-basis: calc(50% - 80px);
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         flex-basis: initial;
       }
       .column__contentInner {
         padding-top: 176px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           padding-top: 0;
         }
       }
     }
     .column__imgSide {
       flex-basis: calc(50% + 80px);
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         flex-basis: initial;
       }
     }
@@ -283,30 +283,30 @@
   &--special {
     .column__contentSide {
       padding-left: 80px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         padding-left: 40px;
       }
-      @include breakMaxWidth($breakpointSP_Portrait) {
+      @include breakMaxWidth($breakpointPhonePortrait) {
         padding-left: 0;
       }
       .column__contentInner {
         max-width: 368px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           max-width: initial;
         }
       }
     }
     .column__imgs {
       left: 0px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         left: -24px;
       }
-      @include breakMaxWidth($breakpointSP_Portrait) {
+      @include breakMaxWidth($breakpointPhonePortrait) {
         left: auto;
       }
       figure {
         max-width: 500px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           max-width: initial;
         }
       }
@@ -315,7 +315,7 @@
         left: -80px;
         height: calc(100% - 80px);
         background: $linearGradientColumnBgSpecial;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           left: auto;
           height: calc(100% - 32px);
         }
@@ -325,25 +325,25 @@
   &--graduates {
     .column__contentSide {
       padding-left: 80px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         padding-left: 40px;
       }
-      @include breakMaxWidth($breakpointSP_Portrait) {
+      @include breakMaxWidth($breakpointPhonePortrait) {
         padding-left: 0;
       }
       .column__contentInner {
         padding-top: 152px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           padding-top: 0;
         }
       }
     }
     .column__imgs {
       right: 0px;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         right: -24px;
       }
-      @include breakMaxWidth($breakpointSP_Portrait) {
+      @include breakMaxWidth($breakpointPhonePortrait) {
         right: -16px;
       }
       &::before {
@@ -351,7 +351,7 @@
       }
       figure {
         max-width: 460px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           max-width: initial;
         }
       }

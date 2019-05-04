@@ -7,7 +7,7 @@
     .header__navItem,
     .header__navItem a {
       @include flex(space-between center);
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         display: block;
       }
     }
@@ -28,7 +28,7 @@
         @include breakMaxWidth($breakpointTabletLandscape) {
           padding: 0 4px;
         }
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           line-height: normal;
         }
 
@@ -60,7 +60,7 @@
 
       & > a {
         height: 104px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           height: 0;
         }
       }
@@ -106,7 +106,7 @@
     visibility: hidden;
     opacity: 0;
     width: 100%;
-    @include breakMaxWidth($breakpointSP) {
+    @include breakMaxWidth($breakpointPhone) {
       display: none;
     }
   }
@@ -122,7 +122,7 @@
       max-width: 800px;
       padding: 0;
       margin: 0 auto;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         flex-wrap: wrap;
         justify-content: space-around;
         max-width: 416px;
@@ -132,7 +132,7 @@
         display: block;
         max-width: calc(100% / 3);
         margin: 8px;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           display: list-item;
           margin: 4px 0;
         }
@@ -140,48 +140,48 @@
           &.logoImghpBeauty {
             width: 111px;
             height: 35px;
-            @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calcSP_PortraitVal(111);
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(111);
               height: auto;
             }
           }
           &.logoImghpGourmet {
             width: 106px;
             height: 36px;
-            @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calcSP_PortraitVal(106);
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(106);
               height: auto;
             }
           }
           &.logoImgJaran {
             width: 117px;
             height: 40px;
-            @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calcSP_PortraitVal(117);
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(117);
               height: auto;
             }
           }
           &.logoImgPonpare {
             width: 112px;
             height: 44px;
-            @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calcSP_PortraitVal(112);
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(112);
               height: auto;
             }
           }
           &.logoImgAirregi {
             width: 114px;
             height: 24px;
-            @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calcSP_PortraitVal(114);
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(114);
               height: auto;
             }
           }
           &.logoImgSalonboard {
             width: 117px;
             height: 58px;
-            @include breakMaxWidth($breakpointSP_Portrait) {
-              width: calcSP_PortraitVal(117);
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(117);
               height: auto;
             }
           }
@@ -198,13 +198,13 @@
     ul {
       width: 49.5%;
       margin: 1em 0;
-      @include breakMaxWidth($breakpointSP) {
+      @include breakMaxWidth($breakpointPhone) {
         width: auto;
         margin: 0;
       }
       &:first-child {
         padding-right: 5%;
-        @include breakMaxWidth($breakpointSP) {
+        @include breakMaxWidth($breakpointPhone) {
           padding-right: 0;
         }
       }
@@ -216,7 +216,7 @@
           white-space: nowrap;
           font-size: 1.2rem;
           color: $colorBlack;
-          @include breakMaxWidth($breakpointSP) {
+          @include breakMaxWidth($breakpointPhone) {
             line-height: 2;
           }
         }
