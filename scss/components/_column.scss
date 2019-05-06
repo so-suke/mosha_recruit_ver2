@@ -1,7 +1,7 @@
 // column
 // ------------------------------------
 .column {
-  @include flex(space-between center);
+  @include flexCenteringWithJustify(space-between);
   @include breakMaxWidth($breakpointPhone) {
     display: block;
   }
@@ -15,7 +15,7 @@
   // column__contentSide
   &__contentSide {
     flex: 1 1 50%;
-    @include flex(flex-end center);
+    @include flexCenteringWithJustify(flex-end);
     padding-right: 80px;
     @include breakMaxWidth($breakpointPhone) {
       display: block;

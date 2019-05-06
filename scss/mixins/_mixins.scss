@@ -1,46 +1,15 @@
-// flex関連
+// flex系mixin。
 // ------------------------------------
-
-// flexのメインになるミックスイン
-// 参照: https://coderwall.com/p/hqj97g/flex-container-shorthand-as-scss-mixin
-@mixin flex($params: null) {
+@mixin flexCenteringWithJustify($justify) {
   display: flex;
-  $justify-content: null;
-  $align-items: null;
-  @each $value in $params {
-    @if $value == "wrap" {
-      flex-wrap: wrap;
-    } @else if $value == "column" {
-      flex-direction: column;
-    } @else if index(space-between space-around, $value) {
-      $justify-content: $value;
-    } @else if index(baseline stretch, $value) {
-      $align-items: $value;
-    } @else if index(flex-start center flex-end, $value) {
-      @if $justify-content {
-        $align-items: $value;
-      } @else {
-        $justify-content: $value;
-        @if not $align-items {
-          $align-items: $value;
-        }
-      }
-    }
-  }
-  justify-content: $justify-content;
-  align-items: $align-items;
-}
-// flex:directionが縦向き、x軸に対して、中央寄せ
-@mixin flexColumnCentering() {
-  @include flex(column);
   align-items: center;
+  justify-content: $justify;
 }
-// flex:directionが縦向き、x軸に対して、開始点に寄せる
-@mixin flexColumnStart() {
-  @include flex(column);
-  align-items: flex-start;
+@mixin flexColumnWithAlign($align) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
 }
-
 // レスポンシブ関連。
 // ------------------------------------
 @mixin breakMaxWidth($breakPoint) {

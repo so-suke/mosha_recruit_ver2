@@ -6,7 +6,7 @@
     &,
     .header__navItem,
     .header__navItem a {
-      @include flex(space-between center);
+      @include flexCenteringWithJustify(space-between);
       @include breakMaxWidth($breakpointPhone) {
         display: block;
       }
@@ -99,7 +99,7 @@
   }
   // .header .childNavList
   .childNavList {
-    @include flex(center);
+    @include flexCenteringWithJustify(center);
     position: absolute;
     top: 100%;
     left: 0;
@@ -117,7 +117,7 @@
 .concept {
   .servicesProvided {
     &__list {
-      @include flex(center);
+      @include flexCenteringWithJustify(center);
       flex-wrap: nowrap;
       max-width: 800px;
       padding: 0;

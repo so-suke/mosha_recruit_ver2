@@ -1,5 +1,5 @@
 .header {
-  @include flex(space-between center);
+  @include flexCenteringWithJustify(space-between);
   z-index: 10;
   position: fixed;
   top: 0;
@@ -36,7 +36,7 @@
     }
 
     .header__navBar {
-      @include flex(space-between center);
+      @include flexCenteringWithJustify(space-between);
     }
   }
 }

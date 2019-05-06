@@ -2,7 +2,7 @@
 // ------------------------------------
 .visual {
   &__logoTitle {
-    @include flexColumnCentering();
+    @include flexColumnWithAlign(center);
     position: absolute;
     top: calc(50% - 100px);
     left: 0;
@@ -49,7 +49,7 @@
 // ------------------------------------
 .concept {
   &__title {
-    @include flexColumnCentering();
+    @include flexColumnWithAlign(center);
     margin-bottom: 24px;
     @include breakMaxWidth($breakpointPhone) {
       margin-bottom: 0;
@@ -136,7 +136,7 @@
       }
     }
     &--pc {
-      @include flexColumnCentering();
+      @include flexColumnWithAlign(center);
       @include breakMaxWidth($breakpointPhone) {
         display: none;
       }
@@ -246,7 +246,7 @@
 // ------------------------------------
 .column {
   &__title {
-    @include flexColumnStart();
+    @include flexColumnWithAlign(flex-start);
     margin: 0 0 48px;
     line-height: 1;
     @include breakMaxWidth($breakpointPhone) {
