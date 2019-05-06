@@ -373,8 +373,8 @@ a:hover {
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   z-index: 10;
   position: fixed;
   top: 0;
@@ -416,8 +416,8 @@ a:hover {
 
 .header__nav .header__navBar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .visual {
@@ -735,8 +735,8 @@ a:hover {
 
 .column {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 767px) {
@@ -758,8 +758,8 @@ a:hover {
 .column__contentSide {
   flex: 1 1 50%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
   padding-right: 80px;
 }
 
@@ -1377,8 +1377,8 @@ a:hover {
 .header__navList .header__navItem,
 .header__navList .header__navItem a {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 767px) {
@@ -1478,8 +1478,8 @@ a:hover {
 
 .header .childNavList {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   position: absolute;
   top: 100%;
   left: 0;
@@ -1496,8 +1496,8 @@ a:hover {
 
 .concept .servicesProvided__list {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-wrap: nowrap;
   max-width: 800px;
   padding: 0;
@@ -1637,8 +1637,8 @@ a:hover {
 
 .header__linkBtn {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   position: relative;
   height: 56px;
   margin-left: 24px;
@@ -1807,14 +1807,14 @@ a:hover {
 
 .footer__linkbtns li a {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .footer__linkbtns {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
   position: absolute;
   bottom: 0;
   z-index: 1;
