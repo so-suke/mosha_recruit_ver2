@@ -51,7 +51,7 @@
         &:hover {
           &::before {
             @include breakMinWidth($breakpointHeaderNav) {
-              opacity: $opacityLittleDeep;
+              opacity: $opacityStandard;
               transform: none;
             }
           }

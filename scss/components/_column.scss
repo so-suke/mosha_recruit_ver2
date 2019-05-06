@@ -55,7 +55,7 @@
       &::before {
         content: "";
         position: absolute;
-        opacity: $opacityDeep;
+        opacity: $opacityDark;
         background: $linearGradientColumnBgPrimary;
       }
       figure {

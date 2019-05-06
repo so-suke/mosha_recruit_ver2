@@ -256,7 +256,7 @@
     .num {
       position: absolute;
       right: 0;
-      opacity: $opacityLittleDeep;
+      opacity: $opacityStandard;
       @include breakMaxWidth($breakpointPhone) {
         top: -80px;
         opacity: $opacityLight;
