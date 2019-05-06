@@ -44,7 +44,7 @@
             background: $colorMenuHoverBg;
             opacity: 0;
             transform: $scaleBeforeHover;
-            transition: opacity $speedFast, transform $speedFast $easeOutCubic;
+            transition: opacity $transitionFast, transform $transitionFast $easeOutCubic;
           }
         }
 
