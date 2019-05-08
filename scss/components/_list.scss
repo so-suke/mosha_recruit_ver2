@@ -1,0 +1,226 @@
+// header
+// ------------------------------------
+.header {
+  font-size: 1.3rem;
+  &__navList {
+    &,
+    .header__navItem,
+    .header__navItem a {
+      @include flexCenteringWithJustify(space-between);
+      @include breakMaxWidth($breakpointPhone) {
+        display: block;
+      }
+    }
+    .header__navItem {
+      a {
+        position: relative;
+        color: inherit;
+        font-weight: bold;
+        font-feature-settings: "palt";
+        height: 56px;
+        padding: 0 16px;
+        letter-spacing: 0.07em;
+        line-height: 1;
+        @include breakMaxWidth($breakpointDesktop) {
+          padding: 0 8px;
+          letter-spacing: normal;
+        }
+        @include breakMaxWidth($breakpointTabletLandscape) {
+          padding: 0 4px;
+        }
+        @include breakMaxWidth($breakpointPhone) {
+          line-height: normal;
+        }
+
+        &::before {
+          @include breakMinWidth($breakpointHeaderNav) {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $colorMenuHoverBg;
+            opacity: 0;
+            transform: $scaleBeforeHover;
+            transition: opacity $transitionFast, transform $transitionFast $easeOutCubic;
+          }
+        }
+
+        &:hover {
+          &::before {
+            @include breakMinWidth($breakpointHeaderNav) {
+              opacity: $opacityStandard;
+              transform: none;
+            }
+          }
+        }
+      }
+
+      & > a {
+        height: 104px;
+        @include breakMaxWidth($breakpointPhone) {
+          height: 0;
+        }
+      }
+
+      &--about {
+        a:hover {
+          color: $colorMenuHoverAbout;
+        }
+      }
+      &--culture {
+        a:hover {
+          color: $colorMenuHoverCulture;
+        }
+      }
+      &--member {
+        a:hover {
+          color: $colorMenuHoverMember;
+        }
+      }
+      &--special {
+        a:hover {
+          color: $colorMenuHoverSpecial;
+        }
+      }
+      &--graduates {
+        a:hover {
+          color: $colorMenuHoverGraduates;
+        }
+      }
+      &--info {
+        a:hover {
+          color: $colorMenuHoverInfo;
+        }
+      }
+    }
+  }
+  // .header .childNavList
+  .childNavList {
+    @include flexCenteringWithJustify(center);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    @include breakMaxWidth($breakpointPhone) {
+      display: none;
+    }
+  }
+}
+
+// concept
+// ------------------------------------
+.concept {
+  .servicesProvided {
+    &__list {
+      @include flexCenteringWithJustify(center);
+      flex-wrap: nowrap;
+      max-width: 800px;
+      padding: 0;
+      margin: 0 auto;
+      @include breakMaxWidth($breakpointPhone) {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 416px;
+        padding: 0 16px;
+      }
+      li {
+        display: block;
+        max-width: calc(100% / 3);
+        margin: 8px;
+        @include breakMaxWidth($breakpointPhone) {
+          display: list-item;
+          margin: 4px 0;
+        }
+        img {
+          &.logoImghpBeauty {
+            width: 111px;
+            height: 35px;
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(111);
+              height: auto;
+            }
+          }
+          &.logoImghpGourmet {
+            width: 106px;
+            height: 36px;
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(106);
+              height: auto;
+            }
+          }
+          &.logoImgJaran {
+            width: 117px;
+            height: 40px;
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(117);
+              height: auto;
+            }
+          }
+          &.logoImgPonpare {
+            width: 112px;
+            height: 44px;
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(112);
+              height: auto;
+            }
+          }
+          &.logoImgAirregi {
+            width: 114px;
+            height: 24px;
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(114);
+              height: auto;
+            }
+          }
+          &.logoImgSalonboard {
+            width: 117px;
+            height: 58px;
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: calcPhonePortraitVal(117);
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer
+// ------------------------------------
+.footer {
+  &__link {
+    ul {
+      width: 49.5%;
+      margin: 1em 0;
+      @include breakMaxWidth($breakpointPhone) {
+        width: auto;
+        margin: 0;
+      }
+      &:first-child {
+        padding-right: 5%;
+        @include breakMaxWidth($breakpointPhone) {
+          padding-right: 0;
+        }
+      }
+      li {
+        a {
+          display: block;
+          line-height: 2.4;
+          letter-spacing: 0.5px;
+          white-space: nowrap;
+          font-size: 1.2rem;
+          color: $colorBlack;
+          @include breakMaxWidth($breakpointPhone) {
+            line-height: 2;
+          }
+        }
+      }
+    }
+  }
+}

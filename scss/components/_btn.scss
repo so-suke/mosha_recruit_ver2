@@ -1,0 +1,243 @@
+// header
+// ------------------------------------
+.header {
+  &__linkBtn {
+    @include flexCenteringWithJustify(center);
+    position: relative;
+    height: 56px;
+    margin-left: 24px;
+    border-radius: 50px;
+    padding: 0 40px;
+    color: $colorWhite;
+    font-weight: bold;
+    @include breakMaxWidth($breakpointDesktop) {
+      margin-left: 16px;
+      padding: 0 32px;
+    }
+    @include breakMaxWidth($breakpointIpad) {
+      margin-left: 8px;
+      padding: 0 24px;
+    }
+
+    &::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $linearGradientBtnPrimary;
+      border-radius: 50px;
+      opacity: 1;
+      @include breakMaxWidth($breakpointPhone) {
+        content: none;
+      }
+    }
+    &:hover {
+      color: $colorWhite;
+    }
+  }
+
+  &__navToggle {
+    display: none;
+    cursor: pointer;
+    @include breakMaxWidth($breakpointHeaderNav) {
+      display: block;
+      z-index: 1;
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      padding: 14px;
+      border: 0;
+      outline: none;
+      background: none;
+    }
+    &,
+    .bg {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        width: 48px;
+        height: 48px;
+        border-radius: 50px;
+      }
+    }
+
+    .bar {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        display: block;
+        z-index: 1;
+        position: absolute;
+        top: calc(50% - 1px);
+        width: 20px;
+        height: 2px;
+        background: $colorWhite;
+      }
+
+      &:nth-child(1) {
+        @include breakMaxWidth($breakpointHeaderNav) {
+          transform: translateY(-7px);
+        }
+      }
+      &:nth-child(3) {
+        @include breakMaxWidth($breakpointHeaderNav) {
+          transform: translateY(7px);
+        }
+      }
+    }
+
+    .bg {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $linearGradientBtnPrimary;
+      }
+    }
+  }
+}
+
+// column
+// ------------------------------------
+.column {
+  .btn {
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    max-width: 232px;
+    width: 100%;
+    margin-top: 64px;
+    padding: 1em 24px;
+    border-radius: 2em;
+    color: $colorWhite;
+    text-align: left;
+    @include breakMaxWidth($breakpointPhone) {
+      max-width: 200px;
+      margin-top: 32px;
+    }
+    &::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50px;
+      background: $linearGradientBtnPrimary;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 8px);
+      right: 24px;
+      width: 10px;
+      height: 16px;
+      background: url(/img/ico_arrow.svg) center / cover no-repeat;
+    }
+  }
+
+  // column--modifier
+  &--skill {
+    .btn {
+      &::before {
+        background: $linearGradientBtnSkill;
+      }
+    }
+  }
+  &--member {
+    .btn {
+      &::before {
+        background: $linearGradientBtnMember;
+      }
+    }
+  }
+  &--special {
+    .btn {
+      &::before {
+        background: $linearGradientBtnSpecial;
+      }
+    }
+  }
+  &--graduates {
+    .btn {
+      &::before {
+        background: $linearGradientBtnGraduates;
+      }
+    }
+  }
+}
+
+// footer
+// ------------------------------------
+.footer {
+  &__linkbtns li a {
+    @include flexCenteringWithJustify(center);
+  }
+  &__linkbtns {
+    @include flexCenteringWithJustify(flex-start);
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    margin-bottom: 0;
+    @include breakMaxWidth($breakpointPhone) {
+      position: relative;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+
+    li {
+      a {
+        position: relative;
+        height: 59px;
+        width: 160px;
+        min-width: 100px;
+        border-radius: 50px;
+        padding: 0 24px;
+        font-size: 1.5rem;
+        line-height: 1;
+        text-decoration: inherit;
+        color: $colorWhite;
+        white-space: nowrap;
+        @include breakMaxWidth($breakpointIpad) {
+          height: 48px;
+          padding: 0 16px;
+          font-size: 1.2rem;
+        }
+        &::after {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          border-radius: 50px;
+          background: $linearGradientBtnPrimary;
+        }
+
+        &.share {
+          &::before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            top: -0.01em;
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5em;
+            vertical-align: middle;
+            background: url(../img/ico_fb.svg) center / cover no-repeat;
+            @include breakMaxWidth($breakpointPhonePortrait) {
+              width: 1em;
+              height: 1em;
+            }
+          }
+        }
+        &.pagetop {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

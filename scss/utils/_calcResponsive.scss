@@ -1,0 +1,32 @@
+/// タブレットサイズにおいてのレスポンシブ値を求める。
+/// @param {number} originalPixelNum -
+///   元々の大きさ(pixel値)。
+///   元々の大きさとは、
+///   margin, paddingなどの場合は、一つ上のブレークポイントでの大きさ。
+///   画像の場合は、そのまま元々の大きさ。
+@function calcTabletLandscapeVal($originalPixelNum) {
+  // 引数の数字から'px'を取り除きます。
+  $originalPixelNum: stripUnit($originalPixelNum);
+  @return calc(#{$originalPixelNum}vw / #{$tabletLandscapeAdjustVal});
+}
+
+/// スマホサイズにおいてのレスポンシブ値を求める。
+/// @param {number} originalPixelNum - 元々の大きさ(pixel値)。
+@function calcPhoneVal($originalPixelNum) {
+  $originalPixelNum: stripUnit($originalPixelNum);
+  @return calc(#{$originalPixelNum}vw / #{$phoneAdjustVal});
+}
+
+/// スマホサイズにおいてのレスポンシブ値を求める。visual画像の二番目に大きな画像に使用。
+/// @param {number} originalPixelNum - 元々の大きさ(pixel値)。
+@function calcPhoneLargeVal($originalPixelNum) {
+  $originalPixelNum: stripUnit($originalPixelNum);
+  @return calc(#{$originalPixelNum}vw / #{$phoneAdjustLargeVal});
+}
+
+/// スマホサイズ(縦)においてのレスポンシブ値を求める。
+/// @param {number} originalPixelNum - 元々の大きさ(pixel値)。
+@function calcPhonePortraitVal($originalPixelNum) {
+  $originalPixelNum: stripUnit($originalPixelNum);
+  @return calc(#{$originalPixelNum}vw / #{$phonePortraitAdjustVal});
+}

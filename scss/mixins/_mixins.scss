@@ -1,0 +1,37 @@
+// flex系mixin。
+// ------------------------------------
+@mixin flexCenteringWithJustify($justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+@mixin flexColumnWithAlign($align) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+}
+// レスポンシブ関連。
+// ------------------------------------
+@mixin breakMaxWidth($breakPoint) {
+  @media (max-width: ($breakPoint)) {
+    @content;
+  }
+}
+// max-width, 画面縦向き
+@mixin breakMaxWidthAndPortrait($breakPoint) {
+  @media screen and (max-width: $breakPoint) and (orientation: portrait) {
+    @content;
+  }
+}
+// max-width, 画面横向き
+@mixin breakMaxWidthAndLandscape($breakPoint) {
+  @media screen and (max-width: $breakPoint) and (orientation: landscape) {
+    @content;
+  }
+}
+// PCファーストなスタイルのため、ブレークポイント値をmin-width仕様に修正しています。
+@mixin breakMinWidth($breakPointForMax) {
+  @media (min-width: ($breakPointForMax + 1)) {
+    @content;
+  }
+}

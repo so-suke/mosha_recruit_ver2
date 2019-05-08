@@ -1,0 +1,65 @@
+// レスポンシブサイズ
+// ------------------------------------
+$breakpointDesktop: 1199px;
+$breakpointIpad: 1023px;
+$breakpointTabletLandscape: 900px;
+$breakpointHeaderNav: 953px;
+$breakpointPhone: 767px;
+$breakpointPhonePortrait: 480px;
+
+// レスポンシブ計算に使用します。
+// ------------------------------------
+$tabletLandscapeAdjustVal: 900 / 100;
+$phoneAdjustVal: 767 / 100;
+$phoneAdjustLargeVal: (767 / 100) - 1; // visual画像の大きさの違いを出すためのもの。
+$phonePortraitAdjustVal: 480 / 100;
+
+// opacity値
+// ------------------------------------
+$opacityLight: .4;
+$opacityStandard: .6;
+$opacityDark: .8;
+
+// scale値
+// ------------------------------------
+$scaleBeforeHover: scale(0.9, 0.6);
+
+// transitionスピード
+// ------------------------------------
+$transitionFast: 0.3s;
+
+// cubic-bezier値
+// ------------------------------------
+// 参照: https://qiita.com/skwbr/items/64d1ac2c3d8e8a3110f5
+$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+// color
+// ------------------------------------
+$colorWhite: #fff;
+$colorBlack: #121212;
+$colorFooterBorder: #d7d7d7;
+$colorFooterIconBg: rgba(255, 255, 255, 0.2);
+// color: ヘッダーメニュー、ホバー時の色
+$colorMenuHoverBg: #e9e9e9;
+$colorMenuHoverAbout: #ffcb00;
+$colorMenuHoverCulture: #008aff;
+$colorMenuHoverInfo: #008aff;
+$colorMenuHoverMember: #ff5238;
+$colorMenuHoverSpecial: #41da70;
+$colorMenuHoverGraduates: #8943ef;
+
+// linear-gradient
+// ------------------------------------
+$linearGradientVisual: linear-gradient(to bottom, #2679cd, #4db2f2);
+// linear-gradient: ボタンの色
+$linearGradientBtnPrimary: linear-gradient(to right, #004eff, #008aff);
+$linearGradientBtnSkill: linear-gradient(to right, #ffb400, #ffd200);
+$linearGradientBtnMember: linear-gradient(to right, #ff4444, #ff6c00);
+$linearGradientBtnSpecial: linear-gradient(to right, #00d596, #12e671);
+$linearGradientBtnGraduates: linear-gradient(to right, #6e41e1, #b931da);
+// linear-gradient: カラムの背景色
+$linearGradientColumnBgPrimary: linear-gradient(to right, #004eff, #00a2ff);
+$linearGradientColumnBgSkill: linear-gradient(to right, #ff9c00, #ffd200);
+$linearGradientColumnBgMember: linear-gradient(to right, #ff4444, #ff9000);
+$linearGradientColumnBgSpecial: linear-gradient(to right, #00d596, #12e62b);
+$linearGradientColumnBgGraduates: linear-gradient(to right, #6e41e1, #dd53ff);

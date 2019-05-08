@@ -1,0 +1,31 @@
+// entireBackgroud
+// ------------------------------------
+.entireBackgroud {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: $opacityDark;
+  div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    will-change: transform;
+  }
+  .large {
+    height: 300%;
+    background: url(/img/bg_l.svg) center 0 / cover repeat-y;
+  }
+  .medium {
+    height: 200%;
+    background: url(/img/bg_m.svg) center 0 / cover repeat-y;
+  }
+  .small {
+    height: 180%;
+    background: url(/img/bg_s.svg) center 0 / cover repeat-y;
+  }
+}
