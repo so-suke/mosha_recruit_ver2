@@ -1,0 +1,26 @@
+{
+  "name": "mosha_recruit_ver2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap-scss": "^4.3.1",
+    "browser-sync": "^2.26.5",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/so-suke/mosha_recruit_ver2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/so-suke/mosha_recruit_ver2/issues"
+  },
+  "homepage": "https://github.com/so-suke/mosha_recruit_ver2#readme"
+}
