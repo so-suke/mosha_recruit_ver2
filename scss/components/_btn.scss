@@ -1,3 +1,40 @@
+// ***** 修正候補: この書き方で問題ないでしょうか。*****
+@include breakMaxWidth($breakpointHeaderNav) {
+  body.navOpen {
+    .header {
+      &__nav {
+        &.anima {
+          & + .header__navToggle {
+            &::before,
+            &::after,
+            .bar {
+              transition-delay: 0s;
+            }
+          }
+          & + .header__navToggle .bg {
+            transition-delay: 0s;
+          }
+        }
+      }
+
+      &__navToggle {
+        .bar {
+          transform: translateX(100px);
+          &:nth-child(1) {
+            transform: rotate(225deg);
+          }
+          &:nth-child(3) {
+            transform: rotate(-225deg);
+          }
+        }
+        .bg {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
 // header
 // ------------------------------------
 .header {
@@ -14,6 +51,14 @@
       margin-left: 16px;
       padding: 0 32px;
     }
+    @include breakMaxWidth($breakpointHeaderNav) {
+      border-radius: 2em;
+      background: $colorWhite;
+      letter-spacing: 0.06em;
+      text-align: center;
+      font-size: 1.8rem;
+      color: $colorPrimary;
+    }
     @include breakMaxWidth($breakpointIpad) {
       margin-left: 8px;
       padding: 0 24px;
@@ -27,8 +72,8 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: $linearGradientBtnPrimary;
       border-radius: 50px;
+      background: $linearGradientBtnPrimary;
       opacity: 1;
       @include breakMaxWidth($breakpointPhone) {
         content: none;
@@ -92,6 +137,26 @@
         top: 0;
         left: 0;
         background: $linearGradientBtnPrimary;
+      }
+    }
+  }
+
+  //headerアニメーション関連
+  @include breakMaxWidth($breakpointHeaderNav) {
+    &__nav {
+      &.anima {
+        & + .header__navToggle {
+          &::before,
+          &::after {
+            transition: transform $transitionSpeedFast $transitionDelayLittleLarge $easeOutCubic;
+          }
+          .bar {
+            transition: transform $transitionSpeedLittleFast $transitionDelayLittleLarge $easeOutExpo;
+          }
+          .bg {
+            transition: opacity $transitionSpeedFast $transitionDelayLittleLarge;
+          }
+        }
       }
     }
   }

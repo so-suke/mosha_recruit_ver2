@@ -2,8 +2,8 @@
 // ------------------------------------
 $breakpointDesktop: 1199px;
 $breakpointIpad: 1023px;
-$breakpointTabletLandscape: 900px;
 $breakpointHeaderNav: 953px;
+$breakpointTabletLandscape: 900px;
 $breakpointPhone: 767px;
 $breakpointPhonePortrait: 480px;
 
@@ -16,41 +16,54 @@ $phonePortraitAdjustVal: 480 / 100;
 
 // opacity値
 // ------------------------------------
-$opacityLight: .4;
-$opacityStandard: .6;
-$opacityDark: .8;
+$opacityLight: 0.4;
+$opacityStandard: 0.6;
+$opacityDark: 0.8;
 
 // scale値
 // ------------------------------------
 $scaleBeforeHover: scale(0.9, 0.6);
+$scaleSmall: scale(0.6);
+$scaleLittleSmall: scale(0.8);
 
 // transitionスピード
 // ------------------------------------
-$transitionFast: 0.3s;
+$transitionSpeedVeryFast: 0.2s;
+$transitionSpeedFast: 0.3s;
+$transitionSpeedLittleFast: 0.6s;
+$transitionSpeedNormal: 1s;
+$transitionSpeedLittleSlow: 1.2s;
+$transitionSpeedVerySlow: 2s;
+
+// transition:delay
+$transitionDelayLittle: 0.3s;
+$transitionDelayLittleLarge: 0.6s;
+$transitionDelayLarge: 1s;
 
 // cubic-bezier値
 // ------------------------------------
 // 参照: https://qiita.com/skwbr/items/64d1ac2c3d8e8a3110f5
 $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
 
 // color
 // ------------------------------------
 $colorWhite: #fff;
 $colorBlack: #121212;
+$colorPrimary: #008aff;
 $colorFooterBorder: #d7d7d7;
 $colorFooterIconBg: rgba(255, 255, 255, 0.2);
 // color: ヘッダーメニュー、ホバー時の色
 $colorMenuHoverBg: #e9e9e9;
 $colorMenuHoverAbout: #ffcb00;
-$colorMenuHoverCulture: #008aff;
-$colorMenuHoverInfo: #008aff;
 $colorMenuHoverMember: #ff5238;
 $colorMenuHoverSpecial: #41da70;
 $colorMenuHoverGraduates: #8943ef;
 
 // linear-gradient
 // ------------------------------------
-$linearGradientVisual: linear-gradient(to bottom, #2679cd, #4db2f2);
+$linearGradientVisualBg: linear-gradient(to bottom, #2679cd, #4db2f2);
+$linearGradientVisualAfterBg: linear-gradient(to bottom, #2679cd, #4db2f2);
 // linear-gradient: ボタンの色
 $linearGradientBtnPrimary: linear-gradient(to right, #004eff, #008aff);
 $linearGradientBtnSkill: linear-gradient(to right, #ffb400, #ffd200);
@@ -63,3 +76,15 @@ $linearGradientColumnBgSkill: linear-gradient(to right, #ff9c00, #ffd200);
 $linearGradientColumnBgMember: linear-gradient(to right, #ff4444, #ff9000);
 $linearGradientColumnBgSpecial: linear-gradient(to right, #00d596, #12e62b);
 $linearGradientColumnBgGraduates: linear-gradient(to right, #6e41e1, #dd53ff);
+
+// マップ定義
+// ------------------------------------
+
+// カラム毎の背景色(_animation_normal.scss:@eachで一括定義のため、あえて作成。)
+$columnKindBgLinearGradientColorMap: (
+  culture: $linearGradientColumnBgPrimary,
+  skill: $linearGradientColumnBgSkill,
+  member: $linearGradientColumnBgMember,
+  special: $linearGradientColumnBgSpecial,
+  graduates: $linearGradientColumnBgGraduates
+);

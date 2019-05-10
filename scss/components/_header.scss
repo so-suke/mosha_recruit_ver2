@@ -1,3 +1,39 @@
+// ***** 修正候補: この書き方で問題ないでしょうか。*****
+@include breakMaxWidth($breakpointHeaderNav) {
+  body.navOpen {
+    .header {
+      &__nav {
+        pointer-events: auto;
+        visibility: visible;
+        transition-delay: 0s;
+        &::before {
+          opacity: 1;
+        }
+
+        .navOverlay {
+          opacity: 1;
+        }
+
+        &.anima {
+          transition-delay: 0s;
+          &::before {
+            transition-delay: $transitionDelayLittle;
+          }
+          .navOverlay {
+            transition-duration: $transitionSpeedFast, $transitionSpeedLittleFast;
+            transition-delay: 0s;
+          }
+        }
+      }
+
+      &__navBar {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+}
+
 .header {
   @include flexCenteringWithJustify(space-between);
   z-index: 10;
@@ -7,8 +43,15 @@
   width: 100%;
   height: 104px;
   padding: 24px 40px;
+  perspective: 1000px;
+  transition: background $transitionSpeedFast;
   @include breakMaxWidth($breakpointIpad) {
     padding: 24px 16px;
+  }
+  @include breakMaxWidth($breakpointHeaderNav) {
+    height: 80px;
+    padding: 16px;
+    perspective: initial;
   }
   &__logo {
     img {
@@ -35,8 +78,52 @@
       }
     }
 
+    &::before {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        content: "";
+        background: $linearGradientColumnBgPrimary;
+        opacity: 0;
+      }
+    }
+
+    // 修正候補: アニメーション関連
+    &.anima {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        transition: visibility 0s $transitionDelayLarge;
+      }
+      &::before {
+        @include breakMaxWidth($breakpointHeaderNav) {
+          transition: opacity $transitionSpeedLittleFast;
+        }
+      }
+    }
+
+    .navOverlay {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        transition: opacity $transitionSpeedVeryFast 0.7s, transform $transitionSpeedLittleFast $transitionDelayLittle;
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50px;
+        background: $linearGradientColumnBgPrimary;
+        opacity: 0;
+      }
+    }
+
     .header__navBar {
       @include flexCenteringWithJustify(space-between);
+      @include breakMaxWidth($breakpointHeaderNav) {
+        display: block;
+        z-index: 1;
+        position: relative;
+        padding: 64px 32px;
+        color: $colorWhite;
+        opacity: 0;
+        transform: $scaleSmall;
+        transition: opacity $transitionSpeedLittleFast, transform $transitionSpeedLittleFast;
+      }
     }
   }
 }
