@@ -1,39 +1,3 @@
-// ***** 修正候補: この書き方で問題ないでしょうか。*****
-@include breakMaxWidth($breakpointHeaderNav) {
-  body.navOpen {
-    .header {
-      &__nav {
-        pointer-events: auto;
-        visibility: visible;
-        transition-delay: 0s;
-        &::before {
-          opacity: 1;
-        }
-
-        .navOverlay {
-          opacity: 1;
-        }
-
-        &.anima {
-          transition-delay: 0s;
-          &::before {
-            transition-delay: $transitionDelayLittle;
-          }
-          .navOverlay {
-            transition-duration: $transitionSpeedFast, $transitionSpeedLittleFast;
-            transition-delay: 0s;
-          }
-        }
-      }
-
-      &__navBar {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  }
-}
-
 .header {
   @include flexCenteringWithJustify(space-between);
   z-index: 10;
@@ -86,7 +50,7 @@
       }
     }
 
-    // 修正候補: アニメーション関連
+    // アニメーション関連
     &.anima {
       @include breakMaxWidth($breakpointHeaderNav) {
         transition: visibility 0s $transitionDelayLarge;
@@ -123,6 +87,54 @@
         opacity: 0;
         transform: $scaleSmall;
         transition: opacity $transitionSpeedLittleFast, transform $transitionSpeedLittleFast;
+      }
+    }
+  }
+
+  // ヘッダーナビが開く時のアニメーション関連
+  &.navOpen {
+    .header {
+      &__nav {
+        @include breakMaxWidth($breakpointHeaderNav) {
+          pointer-events: auto;
+          visibility: visible;
+          transition-delay: 0s;
+        }
+        &::before {
+          @include breakMaxWidth($breakpointHeaderNav) {
+            opacity: 1;
+          }
+        }
+
+        .navOverlay {
+          @include breakMaxWidth($breakpointHeaderNav) {
+            opacity: 1;
+          }
+        }
+
+        &.anima {
+          @include breakMaxWidth($breakpointHeaderNav) {
+            transition-delay: 0s;
+          }
+          &::before {
+            @include breakMaxWidth($breakpointHeaderNav) {
+              transition-delay: $transitionDelayLittle;
+            }
+          }
+          .navOverlay {
+            @include breakMaxWidth($breakpointHeaderNav) {
+              transition-duration: $transitionSpeedFast, $transitionSpeedLittleFast;
+              transition-delay: 0s;
+            }
+          }
+        }
+      }
+
+      &__navBar {
+        @include breakMaxWidth($breakpointHeaderNav) {
+          opacity: 1;
+          transform: none;
+        }
       }
     }
   }

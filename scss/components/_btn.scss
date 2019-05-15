@@ -1,40 +1,3 @@
-// ***** 修正候補: この書き方で問題ないでしょうか。*****
-@include breakMaxWidth($breakpointHeaderNav) {
-  body.navOpen {
-    .header {
-      &__nav {
-        &.anima {
-          & + .header__navToggle {
-            &::before,
-            &::after,
-            .bar {
-              transition-delay: 0s;
-            }
-          }
-          & + .header__navToggle .bg {
-            transition-delay: 0s;
-          }
-        }
-      }
-
-      &__navToggle {
-        .bar {
-          transform: translateX(100px);
-          &:nth-child(1) {
-            transform: rotate(225deg);
-          }
-          &:nth-child(3) {
-            transform: rotate(-225deg);
-          }
-        }
-        .bg {
-          opacity: 0;
-        }
-      }
-    }
-  }
-}
-
 // header
 // ------------------------------------
 .header {
@@ -155,6 +118,52 @@
           }
           .bg {
             transition: opacity $transitionSpeedFast $transitionDelayLittleLarge;
+          }
+        }
+      }
+    }
+  }
+
+  &.navOpen {
+    .header {
+      &__nav {
+        &.anima {
+          & + .header__navToggle {
+            &::before,
+            &::after,
+            .bar {
+              @include breakMaxWidth($breakpointHeaderNav) {
+                transition-delay: 0s;
+              }
+            }
+          }
+          & + .header__navToggle .bg {
+            @include breakMaxWidth($breakpointHeaderNav) {
+              transition-delay: 0s;
+            }
+          }
+        }
+      }
+
+      &__navToggle {
+        .bar {
+          @include breakMaxWidth($breakpointHeaderNav) {
+            transform: translateX(100px);
+          }
+          &:nth-child(1) {
+            @include breakMaxWidth($breakpointHeaderNav) {
+              transform: rotate(225deg);
+            }
+          }
+          &:nth-child(3) {
+            @include breakMaxWidth($breakpointHeaderNav) {
+              transform: rotate(-225deg);
+            }
+          }
+        }
+        .bg {
+          @include breakMaxWidth($breakpointHeaderNav) {
+            opacity: 0;
           }
         }
       }
