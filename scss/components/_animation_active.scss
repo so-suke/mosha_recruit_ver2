@@ -39,7 +39,7 @@
         .position {
           // visual__imgの1から6までのdelay定義
           @each $i in $visualImgDisplayOrder {
-            &-#{$i} {
+            &--#{$i} {
               transition-delay: #{$visualImgDelayBase}s;
               &::after {
                 transition-delay: #{$visualImgAfterDelayBase}s;
