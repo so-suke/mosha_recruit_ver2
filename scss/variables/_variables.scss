@@ -88,3 +88,29 @@ $columnKindBgLinearGradientColorMap: (
   special: $linearGradientColumnBgSpecial,
   graduates: $linearGradientColumnBgGraduates
 );
+
+// アニメーションによる表示に関する定義
+// ------------------------------------
+
+// アニメーション遅延の変動値。
+$delayFloatingVal: 0.1;
+
+// visualImg関連
+// ------------------------------------
+// アニメーション時の表示順
+$visualImgDisplayOrder: 1, 4, 5, 6, 2, 3;
+// アニメーション遅延の基準値
+$visualImgDelayBase: 0.6;
+// ::afterのアニメーション遅延の基準値
+$visualImgAfterDelayBase: 0.9;
+
+// column関連
+// ------------------------------------
+// アニメーション時の表示順
+$columnDisplayOrder: 2, 1, 4, 3, 6, 5;
+// アニメーション遅延の基準値
+$columnDelayBase: 0;
+// afterのアニメーション遅延の基準値
+$columnAfterDelayBase: 0.3;
+// スマホサイズにおいての調整値
+$columnDelayAdjustValPhone: 0.3;
