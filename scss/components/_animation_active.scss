@@ -1,7 +1,7 @@
 // visual
 // ------------------------------------
 .visual {
-  &.jsCheckin.active {
+  &.isActive {
     transform-origin: 50% 0;
     transform: none;
     .visual {
@@ -106,7 +106,7 @@
 // concept
 // ------------------------------------
 .concept {
-  &.jsCheckin.active {
+  &.isActive {
     .concept__title span,
     .concept__lead span,
     .servicesProvided__title {
@@ -168,7 +168,7 @@
 // column
 // ------------------------------------
 .column {
-  &.jsCheckin.active {
+  &.isActive {
     .column__imgs figure,
     .column__title .ja,
     .column__title .en,
