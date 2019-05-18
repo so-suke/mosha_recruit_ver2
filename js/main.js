@@ -1,9 +1,10 @@
-import { initResetMediaQueries } from './resetMediaQueries';
-import { initEventScroll } from './eventScroll';
-import { initHeaderNavItemLinks } from './headerNavItemLinks';
-import { initHeaderNavToggle } from './headerNavToggle';
+import { setEventMediaQueriesReset } from './resetMediaQueries';
+import { setEventScrolledAnimation } from './eventScroll';
+import { setEventHeaderNavItemLinks, setEventChildNavList } from './headerNavItemLinks';
+import { setEventHeaderNavToggle } from './headerNavToggle';
 
-initResetMediaQueries();
-initEventScroll();
-initHeaderNavItemLinks();
-initHeaderNavToggle();
+setEventMediaQueriesReset();
+setEventScrolledAnimation();
+setEventHeaderNavItemLinks();
+setEventChildNavList();
+setEventHeaderNavToggle();

@@ -83,14 +83,9 @@ const slideToggleChildNavList = ({ event }) => {
 }
 
 /**
- * 初期化関数。
+ * headerNavItemLinksに対してイベントを設定します。
  */
-const init = () => {
-  // transitionEnd時: これ以上アニメーションしないようにします。
-  $childNavList.on('transitionend', animaEnd.normal);
-  $childNavList.mouseenter(childNavEnter);
-  $childNavList.mouseleave(childNavLeave);
-
+const setEventHeaderNavItemLinks = () => {
   $headerNavItemLinks.mouseenter(headerNavEnter);
   $headerNavItemLinks.mouseleave(headerNavLeave);
   // ヘッダーナビのクリック時、childナビを開閉する。
@@ -103,6 +98,17 @@ const init = () => {
   });
 }
 
+/**
+ * childNavListに対してイベントを設定します。
+ */
+const setEventChildNavList = () => {
+  // transitionEnd時: これ以上アニメーションしないようにします。
+  $childNavList.on('transitionend', animaEnd.normal);
+  $childNavList.mouseenter(childNavEnter);
+  $childNavList.mouseleave(childNavLeave);
+}
+
 export {
-  init as initHeaderNavItemLinks,
+  setEventHeaderNavItemLinks,
+  setEventChildNavList,
 };

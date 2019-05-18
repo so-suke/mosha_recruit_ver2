@@ -16,9 +16,9 @@ const resetMediaQueries = () => {
 }
 
 /**
- * 初期設定としてwindowにイベントを設定します。
+ * メディアクエリの再設定イベントを設定します。
  */
-const init = () => {
+const setEventMediaQueriesReset = () => {
   $window.on('load resize', () => {
     resetMediaQueries();
   });
@@ -27,5 +27,5 @@ const init = () => {
 export {
   mediaQueries,
   resetMediaQueries,
-  init as initResetMediaQueries,
+  setEventMediaQueriesReset,
 };

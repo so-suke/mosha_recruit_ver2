@@ -29,9 +29,9 @@ const animateIfIncludeWindow = ({ scrolledPosition, $element }) => {
 }
 
 /**
- * 初期化関数。
+ * スクロール後に実行するイベントを設定します。
  */
-const init = () => {
+const setEventScrolledAnimation = () => {
   window.addEventListener("scroll", function () {
     const scrolledPosition = $window.scrollTop() + $window.height();
 
@@ -45,5 +45,5 @@ const init = () => {
 }
 
 export {
-  init as initEventScroll,
+  setEventScrolledAnimation,
 };

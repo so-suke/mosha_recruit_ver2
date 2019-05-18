@@ -48,7 +48,7 @@ const _openNav = () => {
 /**
  * ナビを開閉する
  */
-const headerNavToggleClick = () => {
+const openCloseHeaderNavToggle = () => {
   if ($header.hasClass('navOpen')) {
     _closeNav();
   } else {
@@ -59,12 +59,12 @@ const headerNavToggleClick = () => {
 }
 
 /**
- * 初期化関数。
+ * HeaderNavToggleに対してのイベントを設定します。
  */
-const init = () => {
-  $headerNavToggle.click(headerNavToggleClick);
+const setEventHeaderNavToggle = () => {
+  $headerNavToggle.click(openCloseHeaderNavToggle);
 }
 
 export {
-  init as initHeaderNavToggle,
+  setEventHeaderNavToggle,
 };
