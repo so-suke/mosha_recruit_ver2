@@ -36,8 +36,9 @@ const setEventScrolledAnimation = () => {
     const scrolledPosition = $window.scrollTop() + $window.height();
 
     // visual, concept, 各column にイベントを設定
-    animateIfIncludeWindow({ scrolledPosition, $element: $visual });
-    animateIfIncludeWindow({ scrolledPosition, $element: $concept });
+    [$visual, $concept].forEach(($element) => {
+      animateIfIncludeWindow({ scrolledPosition, $element });
+    });
     $column.each((idx, element) => {
       animateIfIncludeWindow({ scrolledPosition, $element: $(element) });
     });
