@@ -107,7 +107,7 @@
   //headerアニメーション関連
   @include breakMaxWidth($breakpointHeaderNav) {
     &__nav {
-      &.anima {
+      &.isAnima {
         & + .header__navToggle {
           &::before,
           &::after {
@@ -124,10 +124,10 @@
     }
   }
 
-  &.navOpen {
+  &.isNavOpen {
     .header {
       &__nav {
-        &.anima {
+        &.isAnima {
           & + .header__navToggle {
             &::before,
             &::after,

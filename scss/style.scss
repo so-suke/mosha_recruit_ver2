@@ -16,8 +16,8 @@
 @import "./mixins/mixins";
 
 // animation
-@import "./components/animation_prepare";
-@import "./components/animation_active";
+@import "./states/animation_init";
+@import "./states/_animation_active";
 
 // components
 // ------------------------------------

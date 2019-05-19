@@ -51,7 +51,7 @@
     }
 
     // アニメーション関連
-    &.anima {
+    &.isAnima {
       @include breakMaxWidth($breakpointHeaderNav) {
         transition: visibility 0s $transitionDelayLarge;
       }
@@ -92,7 +92,7 @@
   }
 
   // ヘッダーナビが開く時のアニメーション関連
-  &.navOpen {
+  &.isNavOpen {
     .header {
       &__nav {
         @include breakMaxWidth($breakpointHeaderNav) {
@@ -112,7 +112,7 @@
           }
         }
 
-        &.anima {
+        &.isAnima {
           @include breakMaxWidth($breakpointHeaderNav) {
             transition-delay: 0s;
           }

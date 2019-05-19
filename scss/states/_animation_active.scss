@@ -68,7 +68,7 @@
     .visual__imgs div::after {
       transition: transform $transitionSpeedLittleFast $easeOutExpo;
     }
-    &.fix {
+    &.isFix {
       transition: none;
       .visual__imgs {
         & > div {

@@ -51,7 +51,7 @@
           display: block;
           padding: 0.5em 16px;
           height: auto;
-          &.show {
+          &.isShow {
             .icon {
               &::after {
                 transform: none;
@@ -179,7 +179,7 @@
       }
     }
 
-    &.active {
+    &.isActive {
       @include breakMinWidth($breakpointPhone) {
         z-index: 1;
         visibility: visible;
@@ -188,12 +188,12 @@
       }
     }
     // アニメーション関連
-    &.anima {
+    &.isAnima {
       @include breakMinWidth($breakpointHeaderNav) {
         transition: opacity $transitionSpeedVeryFast, transform $transitionSpeedFast, visibility $transitionSpeedFast;
       }
     }
-    &.active.anima {
+    &.isActive.isAnima {
       @include breakMinWidth($breakpointHeaderNav) {
         transition-duration: $transitionSpeedFast, $transitionSpeedFast, 0s;
       }
