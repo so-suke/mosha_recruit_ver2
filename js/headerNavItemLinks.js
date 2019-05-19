@@ -4,7 +4,7 @@
 import {
   $window, $childNavList, $headerNavItemLinks
 } from './doms';
-import { MEDIA_QUERIES, ANIMATION_STATE, } from './constants';
+import { MEDIA_QUERIES, ANIMATION_STATE, SLIDE_SPEED } from './constants';
 import { mediaQueries } from './resetMediaQueries';
 import { animaEnd, timeoutDelayTime } from './anima';
 
