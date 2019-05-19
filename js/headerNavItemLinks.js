@@ -4,7 +4,7 @@
 import {
   $window, $childNavList, $headerNavItemLinks
 } from './doms';
-import { MEDIA_QUERIES } from './constants';
+import { MEDIA_QUERIES, ANIMATION_STATE, } from './constants';
 import { mediaQueries } from './resetMediaQueries';
 import { animaEnd, timeoutDelayTime } from './anima';
 
@@ -18,7 +18,7 @@ let leaveTimer = null;
 const childNavLeave = (element) => {
   const $childNavList = $(element.currentTarget);
   clearTimeout(enterTimer);
-  $childNavList.removeClass("active").addClass("anima");
+  $childNavList.removeClass(ANIMATION_STATE.IS_ACTIVE).addClass(ANIMATION_STATE.IS_ANIMA);
 }
 
 /**
@@ -39,7 +39,7 @@ const headerNavEnter = (event) => {
     // 二重アニメーション防止。
     clearTimeout(enterTimer);
     enterTimer = setTimeout(() => {
-      $childNavList.addClass('active anima');
+      $childNavList.addClass(ANIMATION_STATE.IS_ACTIVE_ANIMA);
     }, timeoutDelayTime.little);
   }
 }
@@ -59,7 +59,7 @@ const headerNavLeave = (event) => {
     // childNavにホバーしなかった場合にchildNavを閉じます。
     if (leavedTop < navBottom) {
       leaveTimer = setTimeout(() => {
-        $childNavList.removeClass('active').addClass('anima');
+        $childNavList.removeClass(ANIMATION_STATE.IS_ACTIVE).addClass(ANIMATION_STATE.IS_ANIMA);
       }, timeoutDelayTime.little);
     }
     clearTimeout(enterTimer);
@@ -73,12 +73,12 @@ const headerNavLeave = (event) => {
 const slideToggleChildNavList = ({ event }) => {
   const $currentTarget = $(event.currentTarget);
   const $childNavList = $($currentTarget.next());
-  if ($currentTarget.hasClass('show')) {
-    $currentTarget.removeClass('show');
-    $childNavList.slideUp(600);
+  if ($currentTarget.hasClass(ANIMATION_STATE.IS_SHOW)) {
+    $currentTarget.removeClass(ANIMATION_STATE.IS_SHOW);
+    $childNavList.slideUp(SLIDE_SPEED);
   } else {
-    $currentTarget.addClass('show');
-    $childNavList.slideDown(600);
+    $currentTarget.addClass(ANIMATION_STATE.IS_SHOW);
+    $childNavList.slideDown(SLIDE_SPEED);
   }
 }
 

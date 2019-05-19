@@ -1,6 +1,7 @@
 import {
   $window, $header, $headerNav, $headerNavToggle, $navOverlay
 } from './doms';
+import { ANIMATION_STATE } from './constants';
 import { timeoutDelayTime, animaEnd } from './anima';
 
 /**
@@ -34,7 +35,7 @@ const _spreadCircle = () => {
  */
 const _closeNav = () => {
   _shrinkCircle();
-  $header.removeClass("navOpen");
+  $header.removeClass(ANIMATION_STATE.IS_NAV_OPEN);
 }
 
 /**
@@ -42,19 +43,19 @@ const _closeNav = () => {
  */
 const _openNav = () => {
   _spreadCircle();
-  $header.addClass('navOpen');
+  $header.addClass(ANIMATION_STATE.IS_NAV_OPEN);
 }
 
 /**
  * ナビを開閉する
  */
 const openCloseHeaderNavToggle = () => {
-  if ($header.hasClass('navOpen')) {
+  if ($header.hasClass(ANIMATION_STATE.IS_NAV_OPEN)) {
     _closeNav();
   } else {
     _openNav();
   }
-  $headerNav.addClass("anima");
+  $headerNav.addClass(ANIMATION_STATE.IS_ANIMA);
   animaEnd.withSetTimeout({ $element: $headerNav, delayTime: timeoutDelayTime.normal });
 }
 
