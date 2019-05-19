@@ -6,13 +6,12 @@ const $body = $('body');
 const $header = $('header');
 const $headerNavToggle = $('#headerNavToggle');
 const $headerNav = $('#headerNav');
-const $headerNavItemLinks = $('.header__navItem:has(.childNavList) > a');
-const $childNavList = $('.childNavList');
+const $headerNavItemLinks = $('.jsHeaderNavItemLinks');
+const $childNavList = $('.jsChildNavList');
 const $navOverlay = $('#navOverlay');
-const $navLink = $(".header__navItem > a");
 // visual
 const $visual = $("#visual");
-const $visualPositions = $visual.find('.position');
+const $visualPositions = $visual.find('.jsPosition');
 const $visualImg = {
   back: $visualPositions.filter('[data-position="back"]').find('img'),
   middle: $visualPositions.filter('[data-position="middle"]').find('img'),
@@ -20,17 +19,15 @@ const $visualImg = {
 }
 const $visualBg = $('#visualBg');
 const $visualLogoTitle = $('#visualLogoTitle');
-// concept
-const $concept = $("#concept");
-// column
-const $column = $('.column');
 // ページ背景:水玉模様
 const $entireBackgroud = $('#entireBackgroud');
 const $entireBackgroudItem = {
-  large: $entireBackgroud.find('.large'),
-  medium: $entireBackgroud.find('.medium'),
-  small: $entireBackgroud.find('.small'),
+  large: $entireBackgroud.find('.jsLarge'),
+  medium: $entireBackgroud.find('.jsMedium'),
+  small: $entireBackgroud.find('.jsSmall'),
 }
+// スクロール範囲内に入ったらイベントを発火させる要素。
+const $firedWithinScroll = $('.jsFiredWithinScroll');
 
 export {
   $window,
@@ -41,14 +38,12 @@ export {
   $headerNavItemLinks,
   $childNavList,
   $navOverlay,
-  $navLink,
-  $entireBackgroud,
-  $entireBackgroudItem,
   $visual,
   $visualPositions,
   $visualImg,
   $visualBg,
   $visualLogoTitle,
-  $concept,
-  $column,
+  $entireBackgroud,
+  $entireBackgroudItem,
+  $firedWithinScroll,
 };
