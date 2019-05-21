@@ -1,37 +1,37 @@
 // ヘッダーナビのレスポンシブに対するブレークポイント
-const BREAKPOINT_HEADER_NAV = 953;
+const breakpointHeaderNav = 953;
 
 /**
  * メディアクエリの条件分岐に用いる定数。
  * @type { string }
  */
-const MEDIA_QUERIES = {
-  LARGE: 'MEDIA_QUERIES_LARGE',
-  HEADER_NAV: 'MEDIA_QUERIES_HEADER_NAV',
+const mediaQuery = {
+  large: 'mediaQueryLarge',
+  headerNav: 'mediaQueryHeaderNav',
 }
 
 /**
  * アニメーションの状態に関するものです。
  * @type { string }
  */
-const ANIMATION_STATE = {
-  IS_ACTIVE: 'isActive',
-  IS_ANIMA: 'isAnima',
-  IS_ACTIVE_ANIMA: 'isActive isAnima',
-  IS_FIX: 'isFix',
-  IS_SHOW: 'isShow',
-  IS_NAV_OPEN: 'isNavOpen',
+const animationState = {
+  isActive: 'isActive',
+  isAnima: 'isAnima',
+  isActiveAnima: 'isActive isAnima',
+  isFix: 'isFix',
+  isShow: 'isShow',
+  isNavOpen: 'isNavOpen',
 };
 
 /**
  * headerChildNavListの開閉アニメーションの速さ。
  * @type { number }
  */
-const SLIDE_SPEED = 600;
+const slideSpeed = 600;
 
 export {
-  BREAKPOINT_HEADER_NAV,
-  MEDIA_QUERIES,
-  ANIMATION_STATE,
-  SLIDE_SPEED,
+  breakpointHeaderNav,
+  mediaQuery,
+  animationState,
+  slideSpeed,
 };
