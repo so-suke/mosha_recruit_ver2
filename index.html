@@ -19,8 +19,8 @@
         <div class="header__navBar">
           <ul class="header__navList">
             <li class="header__navItem header__navItem--about">
-              <a href="service/">私たちについて<span class="icon"></span></a>
-              <ul class="childNavList">
+              <a class="jsHeaderNavItemLinks" href="service/">私たちについて<span class="icon"></span></a>
+              <ul class="childNavList jsChildNavList">
                 <li>
                   <a href="service" title="OUR SERVICE">サービス紹介</a>
                 </li>
@@ -48,8 +48,8 @@
               <a href="graduates/">卒業生紹介</a>
             </li>
             <li class="header__navItem header__navItem--info">
-              <a href="support/">インフォ<span class="icon"></span></a>
-              <ul class="childNavList">
+              <a class="jsHeaderNavItemLinks" href="support/">インフォ<span class="icon"></span></a>
+              <ul class="childNavList jsChildNavList">
                 <li>
                   <a href="support" title="RECRUITING INFO">支援制度</a>
                 </li>
@@ -81,25 +81,25 @@
     <div id="visual" class="visual">
       <div class="visual__bg"></div>
       <div class="visual__imgs">
-        <div class="position position--1">
+        <div class="position position--1 jsPosition">
           <img src="img/visual_intro_back_1.png">
         </div>
-        <div class="position position--2">
+        <div class="position position--2 jsPosition">
           <img src="img/visual_intro_back_2.png">
         </div>
-        <div class="position position--3">
+        <div class="position position--3 jsPosition">
           <img src="img/visual_intro_back_3.png">
         </div>
-        <div class="position position--4">
+        <div class="position position--4 jsPosition">
           <img src="img/visual_intro_back_4.png">
         </div>
-        <div class="position position--5">
+        <div class="position position--5 jsPosition">
           <img src="img/visual_intro_middle_1.png">
         </div>
-        <div class="position position--6">
+        <div class="position position--6 jsPosition">
           <img src="img/visual_intro_middle_2.png">
         </div>
-        <div class="position position--7">
+        <div class="position position--7 jsPosition">
           <img src="img/visual_intro_front.png">
         </div>
       </div>
@@ -115,7 +115,7 @@
     </div>
 
     <main class="main">
-      <section id="concept" class="concept">
+      <section class="concept jsFiredWithinScroll">
         <p class="concept__title">
           <span class="bg">
             <img src="img/ttl_top_concept.svg" alt="CONCEPT">
@@ -186,7 +186,7 @@
         </section>
       </section>
 
-      <section class="column column--culture">
+      <section class="column column--culture jsFiredWithinScroll">
         <div class="column__contentSide">
           <!-- こちら↓は、中身の要素の位置調整のために使用します。-->
           <div class="column__contentInner">
@@ -244,7 +244,7 @@
         </div>
       </section>
 
-      <section class="column column--skill column--reverse">
+      <section class="column column--skill column--reverse jsFiredWithinScroll">
         <div class="column__contentSide">
           <div class="column__contentInner">
             <h2 class="column__title">
@@ -302,7 +302,7 @@
       </section>
 
 
-      <section class="column column--member">
+      <section class="column column--member jsFiredWithinScroll">
         <div class="column__contentSide">
           <div class="column__contentInner">
             <h2 class="column__title">
@@ -339,7 +339,7 @@
       </section>
 
 
-      <section class="column column--special column--reverse">
+      <section class="column column--special column--reverse jsFiredWithinScroll">
         <div class="column__contentSide">
           <div class="column__contentInner">
             <h2 class="column__title">
@@ -376,7 +376,7 @@
       </section>
 
 
-      <section class="column column--graduates">
+      <section class="column column--graduates jsFiredWithinScroll">
         <div class="column__contentSide">
           <div class="column__contentInner">
             <h2 class="column__title">
@@ -454,11 +454,15 @@
     </footer>
     <!-- ページ背景の水玉模様に使用します。-->
     <div class="entireBackgroud">
-      <div class="large"></div>
-      <div class="medium"></div>
-      <div class="small"></div>
+      <div class="large jsLarge"></div>
+      <div class="medium jsMedium"></div>
+      <div class="small jsSmall"></div>
     </div>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous" defer></script>
+  <script src="./dist/bundle.js" defer></script>
 </body>
 
 </html>

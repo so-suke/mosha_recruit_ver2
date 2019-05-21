@@ -15,6 +15,10 @@
 // ------------------------------------
 @import "./mixins/mixins";
 
+// animation
+@import "./states/animation_init";
+@import "./states/_animation_active";
+
 // components
 // ------------------------------------
 @import "./components/layout";
@@ -26,7 +30,3 @@
 @import "./components/list";
 @import "./components/btn";
 @import "./components/title";
-
-// animation
-@import "./components/animation_normal";
-@import "./components/animation_active";

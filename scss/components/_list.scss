@@ -7,11 +7,33 @@
     .header__navItem,
     .header__navItem a {
       @include flexCenteringWithJustify(space-between);
-      @include breakMaxWidth($breakpointPhone) {
+      @include breakMaxWidth($breakpointHeaderNav) {
         display: block;
       }
     }
     .header__navItem {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        margin-bottom: 0.5em;
+      }
+      @include breakMaxWidth($breakpointHeaderNav) {
+        .icon {
+          position: relative;
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            background: $colorWhite;
+            top: calc(50% - 0.1em);
+            left: calc(100% + 0.5em);
+            transition: transform $transitionSpeedFast $easeOutCubic;
+          }
+          &::after {
+            transform: rotate(-90deg);
+          }
+        }
+      }
       a {
         position: relative;
         color: inherit;
@@ -25,10 +47,19 @@
           padding: 0 8px;
           letter-spacing: normal;
         }
-        @include breakMaxWidth($breakpointTabletLandscape) {
-          padding: 0 4px;
+        @include breakMaxWidth($breakpointHeaderNav) {
+          display: block;
+          padding: 0.5em 16px;
+          height: auto;
+          &.isShow {
+            .icon {
+              &::after {
+                transform: none;
+              }
+            }
+          }
         }
-        @include breakMaxWidth($breakpointPhone) {
+        @include breakMaxWidth($breakpointHeaderNav) {
           line-height: normal;
         }
 
@@ -44,7 +75,7 @@
             background: $colorMenuHoverBg;
             opacity: 0;
             transform: $scaleBeforeHover;
-            transition: opacity $transitionFast, transform $transitionFast $easeOutCubic;
+            transition: opacity $transitionSpeedFast, transform $transitionSpeedFast $easeOutCubic;
           }
         }
 
@@ -60,39 +91,56 @@
 
       & > a {
         height: 104px;
-        @include breakMaxWidth($breakpointPhone) {
-          height: 0;
+        @include breakMaxWidth($breakpointHeaderNav) {
+          height: auto;
+          font-weight: bold;
+          font-size: 1.8rem;
         }
       }
 
       &--about {
         a:hover {
-          color: $colorMenuHoverAbout;
+          @include breakMinWidth($breakpointHeaderNav) {
+            color: $colorMenuHoverAbout;
+          }
+        }
+        a + .childNavList::before {
+          background: linear-gradient(to right, #ff9c00, #ffd200);
         }
       }
       &--culture {
         a:hover {
-          color: $colorMenuHoverCulture;
+          @include breakMinWidth($breakpointHeaderNav) {
+            color: $colorPrimary;
+          }
         }
       }
       &--member {
         a:hover {
-          color: $colorMenuHoverMember;
+          @include breakMinWidth($breakpointHeaderNav) {
+            color: $colorMenuHoverMember;
+          }
         }
       }
       &--special {
         a:hover {
-          color: $colorMenuHoverSpecial;
+          @include breakMinWidth($breakpointHeaderNav) {
+            color: $colorMenuHoverSpecial;
+          }
         }
       }
       &--graduates {
         a:hover {
-          color: $colorMenuHoverGraduates;
+          @include breakMinWidth($breakpointHeaderNav) {
+            color: $colorMenuHoverGraduates;
+          }
         }
       }
       &--info {
         a:hover {
-          color: $colorMenuHoverInfo;
+          @include breakMinWidth($breakpointHeaderNav) {
+            color: $colorPrimary;
+          }
         }
       }
     }
@@ -103,11 +151,68 @@
     position: absolute;
     top: 100%;
     left: 0;
-    visibility: hidden;
-    opacity: 0;
+    transform-origin: 50% 0;
+    transform: rotateX(-90deg);
     width: 100%;
-    @include breakMaxWidth($breakpointPhone) {
+    opacity: 0;
+    visibility: hidden;
+    @include breakMaxWidth($breakpointHeaderNav) {
       display: none;
+      position: relative;
+      top: initial;
+      left: initial;
+      visibility: initial;
+      opacity: 1;
+      transform-origin: initial;
+      transform: initial;
+    }
+    &::before {
+      @include breakMinWidth($breakpointHeaderNav) {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: $opacityDark;
+      }
+    }
+
+    &.isActive {
+      @include breakMinWidth($breakpointPhone) {
+        z-index: 1;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+      }
+    }
+    // アニメーション関連
+    &.isAnima {
+      @include breakMinWidth($breakpointHeaderNav) {
+        transition: opacity $transitionSpeedVeryFast, transform $transitionSpeedFast, visibility $transitionSpeedFast;
+      }
+    }
+    &.isActive.isAnima {
+      @include breakMinWidth($breakpointHeaderNav) {
+        transition-duration: $transitionSpeedFast, $transitionSpeedFast, 0s;
+      }
+    }
+
+    li {
+      @include breakMinWidth($breakpointHeaderNav) {
+        flex: 0 0 auto;
+        height: 80px;
+      }
+    }
+    a {
+      @include breakMinWidth($breakpointHeaderNav) {
+        position: relative;
+        height: 80px;
+        padding: 0 24px;
+        color: $colorWhite;
+        font-size: 1.4rem;
+      }
     }
   }
 }
