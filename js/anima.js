@@ -1,7 +1,7 @@
 // アニメーション関連を定義
 // ------------------------------------
 
-import { ANIMATION_STATE } from './constants';
+import { animationState } from './constants';
 // setTimeOutの遅延時間。
 const timeoutDelayTime = {
   little: 200,
@@ -19,7 +19,7 @@ const animaEnd = {
    * @param { element } object - dom要素
    */
   normal: (element) => {
-    $(element.currentTarget).removeClass(ANIMATION_STATE.IS_ANIMA);
+    $(element.currentTarget).removeClass(animationState.isAnima);
   },
   /**
    * @param { $element } object - jquery要素
@@ -28,7 +28,7 @@ const animaEnd = {
   withSetTimeout: ({ $element, delayTime }) => {
     clearTimeout(_animaEndTimer);
     _animaEndTimer = setTimeout(() => {
-      $element.removeClass(ANIMATION_STATE.IS_ANIMA);
+      $element.removeClass(animationState.isAnima);
     }, delayTime);
   }
 }
@@ -38,10 +38,10 @@ const animaEnd = {
  * @param { $element } object - jquery要素
  */
 const doneAnimation = ($element) => {
-  $element.addClass(ANIMATION_STATE.IS_ACTIVE);
+  $element.addClass(animationState.isActive);
   setTimeout(() => {
     // fixを付与することで、これ以上アニメーションさせるのを防止します。
-    $element.addClass(ANIMATION_STATE.IS_FIX);
+    $element.addClass(animationState.isFix);
   }, 3000);
 }
 

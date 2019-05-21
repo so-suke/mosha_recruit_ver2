@@ -4,8 +4,8 @@
 import {
   $window, $childNavList, $headerNavItemLinks
 } from './doms';
-import { MEDIA_QUERIES, ANIMATION_STATE, SLIDE_SPEED } from './constants';
-import { mediaQueries } from './resetMediaQueries';
+import { mediaQuery, animationState, slideSpeed } from './constants';
+import { mediaQueryNow } from './resetMediaQueries';
 import { animaEnd, timeoutDelayTime } from './anima';
 
 let enterTimer = null;
@@ -18,7 +18,7 @@ let leaveTimer = null;
 const childNavLeave = (element) => {
   const $childNavList = $(element.currentTarget);
   clearTimeout(enterTimer);
-  $childNavList.removeClass(ANIMATION_STATE.IS_ACTIVE).addClass(ANIMATION_STATE.IS_ANIMA);
+  $childNavList.removeClass(animationState.isActive).addClass(animationState.isAnima);
 }
 
 /**
@@ -33,13 +33,13 @@ const childNavEnter = () => {
  * @param { event } object - event
  */
 const headerNavEnter = (event) => {
-  if (mediaQueries === MEDIA_QUERIES.LARGE) {
+  if (mediaQueryNow === mediaQuery.large) {
     const $currentTarget = $(event.currentTarget);
     const $childNavList = $currentTarget.next();
     // 二重アニメーション防止。
     clearTimeout(enterTimer);
     enterTimer = setTimeout(() => {
-      $childNavList.addClass(ANIMATION_STATE.IS_ACTIVE_ANIMA);
+      $childNavList.addClass(animationState.isActiveAnima);
     }, timeoutDelayTime.little);
   }
 }
@@ -49,7 +49,7 @@ const headerNavEnter = (event) => {
  * @param { event } object - event
  */
 const headerNavLeave = (event) => {
-  if (mediaQueries === MEDIA_QUERIES.LARGE) {
+  if (mediaQueryNow === mediaQuery.large) {
     const $currentTarget = $(event.currentTarget);
     const $childNavList = $currentTarget.next();
     // ホバーが外れた時のマウス位置
@@ -59,7 +59,7 @@ const headerNavLeave = (event) => {
     // childNavにホバーしなかった場合にchildNavを閉じます。
     if (leavedTop < navBottom) {
       leaveTimer = setTimeout(() => {
-        $childNavList.removeClass(ANIMATION_STATE.IS_ACTIVE).addClass(ANIMATION_STATE.IS_ANIMA);
+        $childNavList.removeClass(animationState.isActive).addClass(animationState.isAnima);
       }, timeoutDelayTime.little);
     }
     clearTimeout(enterTimer);
@@ -73,12 +73,12 @@ const headerNavLeave = (event) => {
 const slideToggleChildNavList = ({ event }) => {
   const $currentTarget = $(event.currentTarget);
   const $childNavList = $($currentTarget.next());
-  if ($currentTarget.hasClass(ANIMATION_STATE.IS_SHOW)) {
-    $currentTarget.removeClass(ANIMATION_STATE.IS_SHOW);
-    $childNavList.slideUp(SLIDE_SPEED);
+  if ($currentTarget.hasClass(animationState.isShow)) {
+    $currentTarget.removeClass(animationState.isShow);
+    $childNavList.slideUp(slideSpeed);
   } else {
-    $currentTarget.addClass(ANIMATION_STATE.IS_SHOW);
-    $childNavList.slideDown(SLIDE_SPEED);
+    $currentTarget.addClass(animationState.isShow);
+    $childNavList.slideDown(slideSpeed);
   }
 }
 
@@ -91,7 +91,7 @@ const setEventHeaderNavItemLinks = () => {
   // ヘッダーナビのクリック時、childナビを開閉する。
   $headerNavItemLinks.click((event) => {
     // レスポンシブ: ハンバーガー表示時
-    if (mediaQueries === MEDIA_QUERIES.HEADER_NAV) {
+    if (mediaQueryNow === mediaQuery.headerNav) {
       event.preventDefault();
       slideToggleChildNavList({ event });
     }
